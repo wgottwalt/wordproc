@@ -2,8 +2,9 @@
 SET                   (CXX_SOURCES Main.cxx)
 SET                   (INC_FILES )
 SET                   (UI_FILES )
-SET                   (RES_FILES )
-SET                   (TS_FILES )
+SET                   (RES_FILES Resources.qrc)
+SET                   (TS_FILES i18n_Dutch.ts i18n_English.ts i18n_French.ts i18n_Italian.ts
+                                i18n_German.ts i18n_Spanish.ts)
 
 # wrapper and Qt automoc
 QT5_ADD_TRANSLATION   (TS_SOURCES ${TS_FILES})
