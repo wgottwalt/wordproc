@@ -1,7 +1,7 @@
 # sources
-SET                   (CXX_SOURCES Main.cxx)
-SET                   (INC_FILES )
-SET                   (UI_FILES )
+SET                   (CXX_SOURCES Main.cxx MainWindow.cxx)
+SET                   (INC_FILES MainWindow.hxx)
+SET                   (UI_FILES MainWindow.ui)
 SET                   (RES_FILES Resources.qrc)
 SET                   (TS_FILES i18n_Dutch.ts i18n_English.ts i18n_French.ts i18n_Italian.ts
                                 i18n_German.ts i18n_Spanish.ts)
