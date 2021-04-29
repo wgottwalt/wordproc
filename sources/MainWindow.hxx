@@ -2,6 +2,9 @@
 
 #include <QMainWindow>
 #include "ui_MainWindow.h"
+#include "Types.hxx"
+
+class QTranslator;
 
 class MainWindow : public QMainWindow, protected Ui::MainWindow {
     Q_OBJECT
@@ -19,4 +22,11 @@ public:
 protected:
     //--- protected methods ---
     virtual void changeEvent(QEvent *event) override final;
+
+    void setLanguage(const Types::Language lang = Types::Language::English);
+
+private:
+    //--- private properties ---
+    QTranslator *_trans;
+    Types::Language _lang;
 };
