@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
   _lang(Types::Language::English)
 {
     setupUi(this);
+    setupActions();
 
     if (_conf)
     {
@@ -50,6 +51,27 @@ void MainWindow::changeEvent(QEvent *event)
     QMainWindow::changeEvent(event);
 }
 
+void MainWindow::setupActions()
+{
+    // app menu
+
+    // edit menu
+
+    // format menu
+
+    // search menu
+
+    // window menu
+
+    // config menu
+    connect(me_lang_english, &QAction::triggered, [&](){ setLanguage(); });
+    connect(me_lang_dutch, &QAction::triggered, [&](){ setLanguage(Types::Language::Dutch); });
+    connect(me_lang_french, &QAction::triggered, [&](){ setLanguage(Types::Language::French); });
+    connect(me_lang_german, &QAction::triggered, [&](){ setLanguage(Types::Language::German); });
+    connect(me_lang_italian, &QAction::triggered, [&](){ setLanguage(Types::Language::Italian); });
+    connect(me_lang_spanish, &QAction::triggered, [&](){ setLanguage(Types::Language::Spanish); });
+}
+
 void MainWindow::setLanguage(const Types::Language lang)
 {
     QTranslator *translator = new QTranslator(this);
@@ -86,26 +108,38 @@ void MainWindow::setLanguage(const Types::Language lang)
         if (!translator->isEmpty())
         {
             _lang = lang;
+            me_lang_dutch->setEnabled(true);
+            me_lang_english->setEnabled(true);
+            me_lang_french->setEnabled(true);
+            me_lang_german->setEnabled(true);
+            me_lang_italian->setEnabled(true);
+            me_lang_spanish->setEnabled(true);
 
             switch (lang)
             {
                 case Types::Language::Dutch:
+                    me_lang_dutch->setEnabled(false);
                     break;
 
                 case Types::Language::French:
+                    me_lang_french->setEnabled(false);
                     break;
 
                 case Types::Language::German:
+                    me_lang_german->setEnabled(false);
                     break;
 
                 case Types::Language::Italian:
+                    me_lang_italian->setEnabled(false);
                     break;
 
                 case Types::Language::Spanish:
+                    me_lang_spanish->setEnabled(false);
                     break;
 
                 case Types::Language::English:
                 default:
+                    me_lang_english->setEnabled(false);
                     break;
             }
 

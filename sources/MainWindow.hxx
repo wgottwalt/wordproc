@@ -24,6 +24,7 @@ protected:
     //--- protected methods ---
     virtual void changeEvent(QEvent *event) override final;
 
+    void setupActions();
     void setLanguage(const Types::Language lang = Types::Language::English);
 
 private:
