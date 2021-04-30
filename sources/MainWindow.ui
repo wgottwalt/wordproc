@@ -93,11 +93,30 @@
     <addaction name="me_search_replace"/>
     <addaction name="me_search_goto"/>
    </widget>
+   <widget class="QMenu" name="mm_config">
+    <property name="title">
+     <string>I18N_MM_CONFIG</string>
+    </property>
+    <widget class="QMenu" name="sm_config_lang">
+     <property name="title">
+      <string>I18N_SM_CONFIG_LANG</string>
+     </property>
+     <addaction name="me_lang_english"/>
+     <addaction name="separator"/>
+     <addaction name="me_lang_dutch"/>
+     <addaction name="me_lang_french"/>
+     <addaction name="me_lang_german"/>
+     <addaction name="me_lang_italian"/>
+     <addaction name="me_lang_spanish"/>
+    </widget>
+    <addaction name="sm_config_lang"/>
+   </widget>
    <addaction name="mm_app"/>
    <addaction name="mm_edit"/>
    <addaction name="mm_format"/>
    <addaction name="mm_search"/>
    <addaction name="mm_window"/>
+   <addaction name="mm_config"/>
    <addaction name="mm_help"/>
   </widget>
   <widget class="QStatusBar" name="wid_statusbar"/>
@@ -239,6 +258,36 @@
   <action name="me_help_qt">
    <property name="text">
     <string>I18N_ME_HELP_QT</string>
+   </property>
+  </action>
+  <action name="me_lang_english">
+   <property name="text">
+    <string>I18N_ME_LANG_ENGLISH</string>
+   </property>
+  </action>
+  <action name="me_lang_dutch">
+   <property name="text">
+    <string>I18N_ME_LANG_DUTCH</string>
+   </property>
+  </action>
+  <action name="me_lang_french">
+   <property name="text">
+    <string>I18N_ME_LANG_FRENCH</string>
+   </property>
+  </action>
+  <action name="me_lang_italian">
+   <property name="text">
+    <string>I18N_ME_LANG_ITALIAN</string>
+   </property>
+  </action>
+  <action name="me_lang_german">
+   <property name="text">
+    <string>I18N_ME_LANG_GERMAN</string>
+   </property>
+  </action>
+  <action name="me_lang_spanish">
+   <property name="text">
+    <string>I18N_ME_LANG_SPANISH</string>
    </property>
   </action>
  </widget>
