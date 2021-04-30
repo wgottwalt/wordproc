@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,228 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>640</width>
+     <width>800</width>
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="mm_app">
+    <property name="title">
+     <string>I18N_MM_APP</string>
+    </property>
+    <addaction name="me_app_new"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_open"/>
+    <addaction name="me_app_save"/>
+    <addaction name="me_app_saveas"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_close"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_print"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_quit"/>
+   </widget>
+   <widget class="QMenu" name="mm_edit">
+    <property name="title">
+     <string>I18N_MM_EDIT</string>
+    </property>
+    <addaction name="me_edit_undo"/>
+    <addaction name="me_edit_redo"/>
+    <addaction name="separator"/>
+    <addaction name="me_edit_cut"/>
+    <addaction name="me_edit_copy"/>
+    <addaction name="me_edit_paste"/>
+    <addaction name="me_edit_clear"/>
+    <addaction name="separator"/>
+    <addaction name="me_edit_selectall"/>
+   </widget>
+   <widget class="QMenu" name="mm_format">
+    <property name="title">
+     <string>I18N_MM_FORMAT</string>
+    </property>
+    <widget class="QMenu" name="sm_format_align">
+     <property name="title">
+      <string>I18N_SM_FORMAT_ALIGN</string>
+     </property>
+     <addaction name="me_align_left"/>
+     <addaction name="me_align_center"/>
+     <addaction name="me_align_right"/>
+     <addaction name="me_align_justify"/>
+    </widget>
+    <addaction name="me_format_font"/>
+    <addaction name="sm_format_align"/>
+   </widget>
+   <widget class="QMenu" name="mm_window">
+    <property name="title">
+     <string>I18N_MM_WINDOW</string>
+    </property>
+    <addaction name="me_window_next"/>
+    <addaction name="me_window_prev"/>
+    <addaction name="me_window_close"/>
+    <addaction name="me_window_closeall"/>
+   </widget>
+   <widget class="QMenu" name="mm_help">
+    <property name="title">
+     <string>I18N_MM_HELP</string>
+    </property>
+    <addaction name="me_help_app"/>
+    <addaction name="me_help_qt"/>
+   </widget>
+   <widget class="QMenu" name="mm_search">
+    <property name="title">
+     <string>I18N_MM_SEARCH</string>
+    </property>
+    <addaction name="me_search_find"/>
+    <addaction name="me_search_replace"/>
+    <addaction name="me_search_goto"/>
+   </widget>
+   <addaction name="mm_app"/>
+   <addaction name="mm_edit"/>
+   <addaction name="mm_format"/>
+   <addaction name="mm_search"/>
+   <addaction name="mm_window"/>
+   <addaction name="mm_help"/>
   </widget>
   <widget class="QStatusBar" name="wid_statusbar"/>
+  <action name="me_app_new">
+   <property name="text">
+    <string>I18N_ME_APP_NEW</string>
+   </property>
+  </action>
+  <action name="me_app_open">
+   <property name="text">
+    <string>I18N_ME_APP_OPEN</string>
+   </property>
+  </action>
+  <action name="me_app_save">
+   <property name="text">
+    <string>I18N_ME_APP_SAVE</string>
+   </property>
+  </action>
+  <action name="me_app_saveas">
+   <property name="text">
+    <string>I18N_ME_APP_SAVEAS</string>
+   </property>
+  </action>
+  <action name="me_app_close">
+   <property name="text">
+    <string>I18N_ME_APP_CLOSE</string>
+   </property>
+  </action>
+  <action name="me_app_print">
+   <property name="text">
+    <string>I18N_ME_APP_PRINT</string>
+   </property>
+  </action>
+  <action name="me_app_quit">
+   <property name="text">
+    <string>I18N_ME_APP_QUIT</string>
+   </property>
+  </action>
+  <action name="me_edit_undo">
+   <property name="text">
+    <string>I18N_ME_EDIT_UNDO</string>
+   </property>
+  </action>
+  <action name="me_edit_redo">
+   <property name="text">
+    <string>I18N_ME_EDIT_REDO</string>
+   </property>
+  </action>
+  <action name="me_edit_cut">
+   <property name="text">
+    <string>I18N_ME_EDIT_CUT</string>
+   </property>
+  </action>
+  <action name="me_edit_copy">
+   <property name="text">
+    <string>I18N_ME_EDIT_COPY</string>
+   </property>
+  </action>
+  <action name="me_edit_paste">
+   <property name="text">
+    <string>I18N_ME_EDIT_PASTE</string>
+   </property>
+  </action>
+  <action name="me_edit_clear">
+   <property name="text">
+    <string>I18N_ME_EDIT_CLEAR</string>
+   </property>
+  </action>
+  <action name="me_edit_selectall">
+   <property name="text">
+    <string>I18N_ME_EDIT_SELECTALL</string>
+   </property>
+  </action>
+  <action name="me_search_find">
+   <property name="text">
+    <string>I18N_ME_SEARCH_FIND</string>
+   </property>
+  </action>
+  <action name="me_search_replace">
+   <property name="text">
+    <string>I18N_ME_SEARCH_REPLACE</string>
+   </property>
+  </action>
+  <action name="me_search_goto">
+   <property name="text">
+    <string>I18N_ME_SEARCH_GOTO</string>
+   </property>
+  </action>
+  <action name="me_format_font">
+   <property name="text">
+    <string>I18N_ME_FORMAT_FONT</string>
+   </property>
+  </action>
+  <action name="me_align_left">
+   <property name="text">
+    <string>I18N_ME_ALIGN_LEFT</string>
+   </property>
+  </action>
+  <action name="me_align_center">
+   <property name="text">
+    <string>I18N_ME_ALIGN_CENTER</string>
+   </property>
+  </action>
+  <action name="me_align_right">
+   <property name="text">
+    <string>I18N_ME_ALIGN_RIGHT</string>
+   </property>
+  </action>
+  <action name="me_align_justify">
+   <property name="text">
+    <string>I18N_ME_ALIGN_JUSTIFY</string>
+   </property>
+  </action>
+  <action name="me_window_next">
+   <property name="text">
+    <string>I18N_ME_WINDOW_NEXT</string>
+   </property>
+  </action>
+  <action name="me_window_prev">
+   <property name="text">
+    <string>I18N_ME_WINDOW_PREV</string>
+   </property>
+  </action>
+  <action name="me_window_close">
+   <property name="text">
+    <string>I18N_ME_WINDOW_CLOSE</string>
+   </property>
+  </action>
+  <action name="me_window_closeall">
+   <property name="text">
+    <string>I18N_ME_WINDOW_CLOSEALL</string>
+   </property>
+  </action>
+  <action name="me_help_app">
+   <property name="text">
+    <string>I18N_ME_HELP_APP</string>
+   </property>
+  </action>
+  <action name="me_help_qt">
+   <property name="text">
+    <string>I18N_ME_HELP_QT</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
