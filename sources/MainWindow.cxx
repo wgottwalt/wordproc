@@ -1,3 +1,5 @@
+#include <QApplication>
+#include <QSettings>
 #include <QTranslator>
 #include "MainWindow.hxx"
 
@@ -5,13 +7,37 @@
 
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent), Ui::MainWindow(), _trans(new QTranslator(this)),
+  _conf(new QSettings(qApp->organizationName(), qApp->applicationName(), this)),
   _lang(Types::Language::English)
 {
     setupUi(this);
+
+    if (_conf)
+    {
+        move(_conf->value("mainwindow_position", QPoint(40, 40)).toPoint());
+        resize(_conf->value("mainwindow_size", QSize(800, 600)).toSize());
+        _lang = stringToLanguage(_conf->value("language", "English").toString());
+    }
+    else
+    {
+        move(40, 40);
+        resize(800, 600);
+    }
+    setLanguage(_lang);
 }
 
 MainWindow::~MainWindow()
 {
+    if (_conf)
+    {
+        _conf->setValue("mainwindow_position", pos());
+        _conf->setValue("mainwindow_size", size());
+        _conf->setValue("language", languageToString(_lang));
+        _conf->sync();
+    }
+
+    delete _conf;
+    delete _trans;
 }
 
 //--- protected methods ---

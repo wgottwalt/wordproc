@@ -4,6 +4,7 @@
 #include "ui_MainWindow.h"
 #include "Types.hxx"
 
+class QSettings;
 class QTranslator;
 
 class MainWindow : public QMainWindow, protected Ui::MainWindow {
@@ -28,5 +29,6 @@ protected:
 private:
     //--- private properties ---
     QTranslator *_trans;
+    QSettings *_conf;
     Types::Language _lang;
 };
