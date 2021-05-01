@@ -179,5 +179,25 @@
         <source>I18N_ME_LANG_SPANISH</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_SM_CONFIG_THEME</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_THEME_DEFAULT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_THEME_FUSION</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_THEME_WINDOWS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_THEME_MACOS</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
