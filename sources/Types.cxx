@@ -44,3 +44,30 @@ Types::Language stringToLanguage(const QString &str)
 
     return Types::Language::English;
 }
+
+const QString themeToString(const Types::Theme theme)
+{
+    switch (theme)
+    {
+        case Types::Theme::Macos:
+            return "Macos";
+
+        case Types::Theme::Windows:
+            return "Windows";
+
+        case Types::Theme::Fusion:
+        default:
+            return "Fusion";
+    }
+}
+
+Types::Theme stringToTheme(const QString &str)
+{
+    if (str == "Macos")
+        return Types::Theme::Macos;
+
+    if (str == "Windows")
+        return Types::Theme::Windows;
+
+    return Types::Theme::Fusion;
+}
