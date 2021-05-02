@@ -26,10 +26,12 @@ protected:
 
     void setupActions();
     void setLanguage(const Types::Language lang = Types::Language::English);
+    void setTheme(const Types::Theme theme = Types::Theme::Fusion);
 
 private:
     //--- private properties ---
     QTranslator *_trans;
     QSettings *_conf;
     Types::Language _lang;
+    Types::Theme _theme;
 };

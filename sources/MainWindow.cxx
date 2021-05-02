@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QSettings>
+#include <QStyleFactory>
 #include <QTranslator>
 #include "MainWindow.hxx"
 
@@ -8,7 +9,7 @@
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent), Ui::MainWindow(), _trans(new QTranslator(this)),
   _conf(new QSettings(qApp->organizationName(), qApp->applicationName(), this)),
-  _lang(Types::Language::English)
+  _lang(Types::Language::English), _theme(Types::Theme::Fusion)
 {
     setupUi(this);
     setupActions();
@@ -18,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
         move(_conf->value("mainwindow_position", QPoint(40, 40)).toPoint());
         resize(_conf->value("mainwindow_size", QSize(800, 600)).toSize());
         _lang = stringToLanguage(_conf->value("language", "English").toString());
+        _theme = stringToTheme(_conf->value("theme", "Fusion").toString());
     }
     else
     {
@@ -25,6 +27,22 @@ MainWindow::MainWindow(QWidget *parent)
         resize(800, 600);
     }
     setLanguage(_lang);
+    setTheme(_theme);
+
+    me_theme_fusion->setVisible(false);
+    me_theme_macos->setVisible(false);
+    me_theme_windows->setVisible(false);
+    for (auto &stylename : QStyleFactory::keys())
+    {
+        if (stylename == "Fusion")
+            me_theme_fusion->setVisible(true);
+
+        if (stylename == "MacOS")
+            me_theme_macos->setVisible(true);
+
+        if (stylename == "Windows")
+            me_theme_windows->setVisible(true);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -34,6 +52,7 @@ MainWindow::~MainWindow()
         _conf->setValue("mainwindow_position", pos());
         _conf->setValue("mainwindow_size", size());
         _conf->setValue("language", languageToString(_lang));
+        _conf->setValue("theme", themeToString(_theme));
         _conf->sync();
     }
 
@@ -70,6 +89,12 @@ void MainWindow::setupActions()
     connect(me_lang_german, &QAction::triggered, [&](){ setLanguage(Types::Language::German); });
     connect(me_lang_italian, &QAction::triggered, [&](){ setLanguage(Types::Language::Italian); });
     connect(me_lang_spanish, &QAction::triggered, [&](){ setLanguage(Types::Language::Spanish); });
+
+    connect(me_theme_fusion, &QAction::triggered, [&](){ setTheme(); });
+    connect(me_theme_macos, &QAction::triggered, [&](){ setTheme(Types::Theme::Macos); });
+    connect(me_theme_windows, &QAction::triggered, [&](){ setTheme(Types::Theme::Windows); });
+
+    // help menu
 }
 
 void MainWindow::setLanguage(const Types::Language lang)
@@ -150,5 +175,31 @@ void MainWindow::setLanguage(const Types::Language lang)
         }
         else
             delete translator;
+    }
+}
+
+void MainWindow::setTheme(const Types::Theme theme)
+{
+    me_theme_fusion->setEnabled(true);
+    me_theme_macos->setEnabled(true);
+    me_theme_windows->setEnabled(true);
+    _theme = theme;
+
+    switch (theme)
+    {
+        case Types::Theme::Macos:
+            qApp->setStyle(QStyleFactory::create("MacOS"));
+            me_theme_macos->setEnabled(false);
+            break;
+
+        case Types::Theme::Windows:
+            qApp->setStyle(QStyleFactory::create("Windows"));
+            me_theme_windows->setEnabled(false);
+            break;
+
+        case Types::Theme::Fusion:
+        default:
+            qApp->setStyle(QStyleFactory::create("Fusion"));
+            me_theme_fusion->setEnabled(false);
     }
 }
