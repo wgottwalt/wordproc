@@ -52,6 +52,9 @@ const QString themeToString(const Types::Theme theme)
         case Types::Theme::Macos:
             return "Macos";
 
+        case Types::Theme::QtCurve:
+            return "QtCurve";
+
         case Types::Theme::Windows:
             return "Windows";
 
@@ -65,6 +68,9 @@ Types::Theme stringToTheme(const QString &str)
 {
     if (str == "Macos")
         return Types::Theme::Macos;
+
+    if (str == "QtCurve")
+        return Types::Theme::QtCurve;
 
     if (str == "Windows")
         return Types::Theme::Windows;

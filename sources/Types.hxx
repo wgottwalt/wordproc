@@ -17,6 +17,7 @@ namespace Types
     enum class Theme {
         Fusion,
         Macos,
+        QtCurve,
         Windows
     };
 }
