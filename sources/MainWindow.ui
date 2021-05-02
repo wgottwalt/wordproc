@@ -109,18 +109,17 @@
      <addaction name="me_lang_italian"/>
      <addaction name="me_lang_spanish"/>
     </widget>
-    <widget class="QMenu" name="menuI18N_SM_CONFIG_THEME">
+    <widget class="QMenu" name="sm_config_theme">
      <property name="title">
       <string>I18N_SM_CONFIG_THEME</string>
      </property>
-     <addaction name="me_theme_default"/>
-     <addaction name="separator"/>
      <addaction name="me_theme_fusion"/>
+     <addaction name="separator"/>
      <addaction name="me_theme_macos"/>
      <addaction name="me_theme_windows"/>
     </widget>
     <addaction name="sm_config_lang"/>
-    <addaction name="menuI18N_SM_CONFIG_THEME"/>
+    <addaction name="sm_config_theme"/>
    </widget>
    <addaction name="mm_app"/>
    <addaction name="mm_edit"/>
