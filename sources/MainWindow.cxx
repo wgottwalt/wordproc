@@ -31,7 +31,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     me_theme_fusion->setVisible(false);
     me_theme_macos->setVisible(false);
+    me_theme_qtcurve->setVisible(false);
     me_theme_windows->setVisible(false);
+
     for (auto &stylename : QStyleFactory::keys())
     {
         if (stylename == "Fusion")
@@ -39,6 +41,9 @@ MainWindow::MainWindow(QWidget *parent)
 
         if (stylename == "MacOS")
             me_theme_macos->setVisible(true);
+
+        if (stylename == "QtCurve")
+            me_theme_qtcurve->setVisible(true);
 
         if (stylename == "Windows")
             me_theme_windows->setVisible(true);
@@ -92,6 +97,7 @@ void MainWindow::setupActions()
 
     connect(me_theme_fusion, &QAction::triggered, [&](){ setTheme(); });
     connect(me_theme_macos, &QAction::triggered, [&](){ setTheme(Types::Theme::Macos); });
+    connect(me_theme_qtcurve, &QAction::triggered, [&](){ setTheme(Types::Theme::QtCurve); });
     connect(me_theme_windows, &QAction::triggered, [&](){ setTheme(Types::Theme::Windows); });
 
     // help menu
@@ -182,6 +188,7 @@ void MainWindow::setTheme(const Types::Theme theme)
 {
     me_theme_fusion->setEnabled(true);
     me_theme_macos->setEnabled(true);
+    me_theme_qtcurve->setEnabled(true);
     me_theme_windows->setEnabled(true);
     _theme = theme;
 
@@ -190,6 +197,11 @@ void MainWindow::setTheme(const Types::Theme theme)
         case Types::Theme::Macos:
             qApp->setStyle(QStyleFactory::create("MacOS"));
             me_theme_macos->setEnabled(false);
+            break;
+
+        case Types::Theme::QtCurve:
+            qApp->setStyle(QStyleFactory::create("QtCurve"));
+            me_theme_qtcurve->setEnabled(false);
             break;
 
         case Types::Theme::Windows:
