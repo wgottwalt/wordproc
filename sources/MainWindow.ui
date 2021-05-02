@@ -116,6 +116,7 @@
      <addaction name="me_theme_fusion"/>
      <addaction name="separator"/>
      <addaction name="me_theme_macos"/>
+     <addaction name="me_theme_qtcurve"/>
      <addaction name="me_theme_windows"/>
     </widget>
     <addaction name="sm_config_lang"/>
@@ -318,6 +319,11 @@
   <action name="me_theme_macos">
    <property name="text">
     <string>I18N_ME_THEME_MACOS</string>
+   </property>
+  </action>
+  <action name="me_theme_qtcurve">
+   <property name="text">
+    <string>I18N_ME_THEME_QTCURVE</string>
    </property>
   </action>
  </widget>
