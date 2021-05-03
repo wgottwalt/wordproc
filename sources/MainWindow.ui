@@ -118,6 +118,8 @@
      <addaction name="me_theme_macos"/>
      <addaction name="me_theme_qtcurve"/>
      <addaction name="me_theme_windows"/>
+     <addaction name="separator"/>
+     <addaction name="me_theme_darkmode"/>
     </widget>
     <addaction name="sm_config_lang"/>
     <addaction name="sm_config_theme"/>
@@ -324,6 +326,14 @@
   <action name="me_theme_qtcurve">
    <property name="text">
     <string>I18N_ME_THEME_QTCURVE</string>
+   </property>
+  </action>
+  <action name="me_theme_darkmode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>I18N_ME_THEME_DARKMODE</string>
    </property>
   </action>
  </widget>
