@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QPalette>
 #include "ui_MainWindow.h"
 #include "Types.hxx"
 
@@ -27,11 +28,14 @@ protected:
     void setupActions();
     void setLanguage(const Types::Language lang = Types::Language::English);
     void setTheme(const Types::Theme theme = Types::Theme::Fusion);
+    void setDarkmode(const bool mode = true);
 
 private:
     //--- private properties ---
     QTranslator *_trans;
     QSettings *_conf;
+    QPalette _opalette;
     Types::Language _lang;
     Types::Theme _theme;
+    bool _darkmode;
 };

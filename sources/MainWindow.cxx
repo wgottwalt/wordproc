@@ -9,7 +9,8 @@
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent), Ui::MainWindow(), _trans(new QTranslator(this)),
   _conf(new QSettings(qApp->organizationName(), qApp->applicationName(), this)),
-  _lang(Types::Language::English), _theme(Types::Theme::Fusion)
+  _opalette(qApp->palette()), _lang(Types::Language::English), _theme(Types::Theme::Fusion),
+  _darkmode(false)
 {
     setupUi(this);
     setupActions();
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
         resize(_conf->value("mainwindow_size", QSize(800, 600)).toSize());
         _lang = stringToLanguage(_conf->value("language", "English").toString());
         _theme = stringToTheme(_conf->value("theme", "Fusion").toString());
+        _darkmode = _conf->value("darkmode", "false").toBool();
     }
     else
     {
@@ -28,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     setLanguage(_lang);
     setTheme(_theme);
+    setDarkmode(_darkmode);
 
     me_theme_fusion->setVisible(false);
     me_theme_macos->setVisible(false);
@@ -58,6 +61,7 @@ MainWindow::~MainWindow()
         _conf->setValue("mainwindow_size", size());
         _conf->setValue("language", languageToString(_lang));
         _conf->setValue("theme", themeToString(_theme));
+        _conf->setValue("darkmode", _darkmode);
         _conf->sync();
     }
 
@@ -99,6 +103,7 @@ void MainWindow::setupActions()
     connect(me_theme_macos, &QAction::triggered, [&](){ setTheme(Types::Theme::Macos); });
     connect(me_theme_qtcurve, &QAction::triggered, [&](){ setTheme(Types::Theme::QtCurve); });
     connect(me_theme_windows, &QAction::triggered, [&](){ setTheme(Types::Theme::Windows); });
+    connect(me_theme_darkmode, &QAction::toggled, [&](const bool on){ setDarkmode(on); });
 
     // help menu
 }
@@ -214,4 +219,40 @@ void MainWindow::setTheme(const Types::Theme theme)
             qApp->setStyle(QStyleFactory::create("Fusion"));
             me_theme_fusion->setEnabled(false);
     }
+}
+
+void MainWindow::setDarkmode(const bool mode)
+{
+    if (mode)
+    {
+        QPalette dark;
+
+        dark.setColor(QPalette::Window, QColor(53, 53, 53));
+        dark.setColor(QPalette::WindowText, Qt::white);
+        dark.setColor(QPalette::Disabled, QPalette::WindowText, QColor(127, 127, 127));
+        dark.setColor(QPalette::Base, QColor(42, 42, 42));
+        dark.setColor(QPalette::AlternateBase, QColor(66, 66, 66));
+        dark.setColor(QPalette::ToolTipBase, Qt::white);
+        dark.setColor(QPalette::ToolTipText, QColor(53, 53, 53));
+        dark.setColor(QPalette::Text, Qt::white);
+        dark.setColor(QPalette::Disabled, QPalette::Text, QColor(127, 127, 127));
+        dark.setColor(QPalette::Dark, QColor(30, 30, 30));
+        dark.setColor(QPalette::Shadow, QColor(10, 10, 10));
+        dark.setColor(QPalette::Button, QColor(53, 53, 53));
+        dark.setColor(QPalette::ButtonText, Qt::white);
+        dark.setColor(QPalette::Disabled, QPalette::ButtonText, QColor(127, 127, 127));
+        dark.setColor(QPalette::BrightText, Qt::red);
+        dark.setColor(QPalette::Link, QColor(42, 130, 218));
+        dark.setColor(QPalette::Highlight, QColor(42, 130, 218));
+        dark.setColor(QPalette::Disabled, QPalette::Highlight, QColor(80, 80, 80));
+        dark.setColor(QPalette::HighlightedText, Qt::white);
+        dark.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(127, 127, 127));
+
+        qApp->setPalette(dark);
+    }
+    else
+        qApp->setPalette(_opalette);
+
+    _darkmode = mode;
+    me_theme_darkmode->setChecked(mode);
 }
