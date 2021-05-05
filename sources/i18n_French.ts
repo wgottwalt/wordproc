@@ -199,5 +199,13 @@
         <source>I18N_ME_THEME_MACOS</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_ME_THEME_QTCURVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_THEME_DARKMODE</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
