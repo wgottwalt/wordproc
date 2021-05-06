@@ -208,4 +208,39 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>SearchWindow</name>
+    <message>
+        <source>I18N_SEARCHWINDOW</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_FOR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_OPTIONS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_CASE_SENSITIVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_WHOLE_WORDS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_CLOSE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_PREV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_SEARCH_NEXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>
