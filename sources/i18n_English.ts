@@ -212,35 +212,35 @@
     <name>SearchWindow</name>
     <message>
         <source>I18N_SEARCHWINDOW</source>
-        <translation type="unfinished"></translation>
+        <translation>Search ...</translation>
     </message>
     <message>
         <source>I18N_SEARCH_FOR</source>
-        <translation type="unfinished"></translation>
+        <translation>Search for:</translation>
     </message>
     <message>
         <source>I18N_SEARCH_OPTIONS</source>
-        <translation type="unfinished"></translation>
+        <translation>Options:</translation>
     </message>
     <message>
         <source>I18N_SEARCH_CASE_SENSITIVE</source>
-        <translation type="unfinished"></translation>
+        <translation>Case sensitive</translation>
     </message>
     <message>
         <source>I18N_SEARCH_WHOLE_WORDS</source>
-        <translation type="unfinished"></translation>
+        <translation>Whole parts</translation>
     </message>
     <message>
         <source>I18N_SEARCH_CLOSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Close</translation>
     </message>
     <message>
         <source>I18N_SEARCH_PREV</source>
-        <translation type="unfinished"></translation>
+        <translation>Previous</translation>
     </message>
     <message>
         <source>I18N_SEARCH_NEXT</source>
-        <translation type="unfinished"></translation>
+        <translation>Next</translation>
     </message>
 </context>
 </TS>
