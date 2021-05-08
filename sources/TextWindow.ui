@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>I18N_TEXTWINDOW</string>
   </property>
   <layout class="QVBoxLayout" name="lay_textwindow">
    <property name="spacing">
