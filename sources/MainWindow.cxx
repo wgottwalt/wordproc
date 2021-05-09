@@ -1,8 +1,10 @@
 #include <QApplication>
+#include <QMdiSubWindow>
 #include <QSettings>
 #include <QStyleFactory>
 #include <QTranslator>
 #include "MainWindow.hxx"
+#include "TextWindow.hxx"
 
 //--- public constructors ---
 
@@ -255,4 +257,35 @@ void MainWindow::setDarkmode(const bool mode)
 
     _darkmode = mode;
     me_theme_darkmode->setChecked(mode);
+}
+
+TextWindow *MainWindow::createTextWindow(const QString &filename)
+{
+    QMdiSubWindow *subwin = wid_mdi->addSubWindow(new TextWindow);
+    TextWindow *textwin = qobject_cast<TextWindow *>(subwin->widget());
+    QAction *action = mm_window->addAction(textwin->windowTitle(), subwin, [this,subwin]()
+        { wid_mdi->setActiveSubWindow(subwin); });
+
+    connect(textwin, &TextWindow::windowTitleChanged, action, &QAction::setText);
+    connect(textwin, &TextWindow::destroyed, [this,action](){ mm_window->removeAction(action); });
+
+#if 0
+    if (!filename.isEmpty() && !textwin->openFile(filename))
+    {
+        wid_mdi->removeSubWindow(subwin);
+        return nullptr;
+    }
+#endif
+    subwin->setGeometry(subwin->x(), subwin->y(), width() / 2, height() * 2 / 3);
+    textwin->show();
+
+    return textwin;
+}
+
+TextWindow *MainWindow::currentTextWindow()
+{
+    if (QMdiSubWindow *subwin = wid_mdi->activeSubWindow(); subwin)
+        return qobject_cast<TextWindow *>(subwin->widget());
+
+    return nullptr;
 }

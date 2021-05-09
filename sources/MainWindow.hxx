@@ -2,11 +2,13 @@
 
 #include <QMainWindow>
 #include <QPalette>
+#include <QString>
 #include "ui_MainWindow.h"
 #include "Types.hxx"
 
 class QSettings;
 class QTranslator;
+class TextWindow;
 
 class MainWindow : public QMainWindow, protected Ui::MainWindow {
     Q_OBJECT
@@ -29,6 +31,9 @@ protected:
     void setLanguage(const Types::Language lang = Types::Language::English);
     void setTheme(const Types::Theme theme = Types::Theme::Fusion);
     void setDarkmode(const bool mode = true);
+
+    TextWindow *createTextWindow(const QString &filename = "");
+    TextWindow *currentTextWindow();
 
 private:
     //--- private properties ---
