@@ -13,7 +13,28 @@
   <property name="windowTitle">
    <string>I18N_MAINWINDOW</string>
   </property>
-  <widget class="QWidget" name="wid_center"/>
+  <widget class="QWidget" name="wid_center">
+   <layout class="QGridLayout" name="lay_mainwindow">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <property name="spacing">
+     <number>2</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="wid_mdi"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="wid_menubar">
    <property name="geometry">
     <rect>
