@@ -96,6 +96,7 @@
     </property>
     <addaction name="me_window_next"/>
     <addaction name="me_window_prev"/>
+    <addaction name="separator"/>
     <addaction name="me_window_close"/>
     <addaction name="me_window_closeall"/>
    </widget>
@@ -155,81 +156,145 @@
   </widget>
   <widget class="QStatusBar" name="wid_statusbar"/>
   <action name="me_app_new">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/New</normaloff>:/Icons/Application/New</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_NEW</string>
    </property>
   </action>
   <action name="me_app_open">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Open</normaloff>:/Icons/Application/Open</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_OPEN</string>
    </property>
   </action>
   <action name="me_app_save">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Save</normaloff>:/Icons/Application/Save</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_SAVE</string>
    </property>
   </action>
   <action name="me_app_saveas">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/SaveAs</normaloff>:/Icons/Application/SaveAs</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_SAVEAS</string>
    </property>
   </action>
   <action name="me_app_close">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Close</normaloff>:/Icons/Application/Close</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_CLOSE</string>
    </property>
   </action>
   <action name="me_app_print">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Print</normaloff>:/Icons/Application/Print</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_PRINT</string>
    </property>
   </action>
   <action name="me_app_quit">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Exit</normaloff>:/Icons/Application/Exit</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_APP_QUIT</string>
    </property>
   </action>
   <action name="me_edit_undo">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Undo</normaloff>:/Icons/Edit/Undo</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_UNDO</string>
    </property>
   </action>
   <action name="me_edit_redo">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Redo</normaloff>:/Icons/Edit/Redo</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_REDO</string>
    </property>
   </action>
   <action name="me_edit_cut">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Cut</normaloff>:/Icons/Edit/Cut</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_CUT</string>
    </property>
   </action>
   <action name="me_edit_copy">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Copy</normaloff>:/Icons/Edit/Copy</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_COPY</string>
    </property>
   </action>
   <action name="me_edit_paste">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Paste</normaloff>:/Icons/Edit/Paste</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_PASTE</string>
    </property>
   </action>
   <action name="me_edit_clear">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Clear</normaloff>:/Icons/Edit/Clear</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_CLEAR</string>
    </property>
   </action>
   <action name="me_edit_selectall">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/SelectAll</normaloff>:/Icons/Edit/SelectAll</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_EDIT_SELECTALL</string>
    </property>
   </action>
   <action name="me_search_find">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Find</normaloff>:/Icons/Search/Find</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_SEARCH_FIND</string>
    </property>
   </action>
   <action name="me_search_replace">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Replace</normaloff>:/Icons/Search/Replace</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_SEARCH_REPLACE</string>
    </property>
@@ -240,46 +305,82 @@
    </property>
   </action>
   <action name="me_format_font">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/Font</normaloff>:/Icons/Format/Font</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_FORMAT_FONT</string>
    </property>
   </action>
   <action name="me_align_left">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignLeft</normaloff>:/Icons/Format/AlignLeft</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_ALIGN_LEFT</string>
    </property>
   </action>
   <action name="me_align_center">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignCenter</normaloff>:/Icons/Format/AlignCenter</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_ALIGN_CENTER</string>
    </property>
   </action>
   <action name="me_align_right">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignRight</normaloff>:/Icons/Format/AlignRight</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_ALIGN_RIGHT</string>
    </property>
   </action>
   <action name="me_align_justify">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignJustify</normaloff>:/Icons/Format/AlignJustify</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_ALIGN_JUSTIFY</string>
    </property>
   </action>
   <action name="me_window_next">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Next</normaloff>:/Icons/Window/Next</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_WINDOW_NEXT</string>
    </property>
   </action>
   <action name="me_window_prev">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Prev</normaloff>:/Icons/Window/Prev</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_WINDOW_PREV</string>
    </property>
   </action>
   <action name="me_window_close">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Close</normaloff>:/Icons/Window/Close</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_WINDOW_CLOSE</string>
    </property>
   </action>
   <action name="me_window_closeall">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Close</normaloff>:/Icons/Window/Close</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_WINDOW_CLOSEALL</string>
    </property>
@@ -358,6 +459,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

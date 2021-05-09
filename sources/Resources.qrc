@@ -7,4 +7,39 @@
     <file alias="German">i18n_German.qm</file>
     <file alias="Spanish">i18n_Spanish.qm</file>
   </qresource>
+  <qresource prefix="Icons/Application">
+    <file alias="Exit">../assets/icons/application-exit.svg</file>
+    <file alias="Print">../assets/icons/document-print.svg</file>
+    <file alias="Close">../assets/icons/document-close.svg</file>
+    <file alias="Open">../assets/icons/document-open.svg</file>
+    <file alias="SaveAs">../assets/icons/document-save-as.svg</file>
+    <file alias="Save">../assets/icons/document-save.svg</file>
+    <file alias="New">../assets/icons/document-new.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Edit">
+    <file alias="SelectAll">../assets/icons/edit-select-all.svg</file>
+    <file alias="Paste">../assets/icons/edit-paste.svg</file>
+    <file alias="Cut">../assets/icons/edit-cut.svg</file>
+    <file alias="Copy">../assets/icons/edit-copy.svg</file>
+    <file alias="Clear">../assets/icons/edit-clear.svg</file>
+    <file alias="Redo">../assets/icons/edit-redo.svg</file>
+    <file alias="Undo">../assets/icons/edit-undo.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Format">
+    <file alias="AlignCenter">../assets/icons/format-align-center.svg</file>
+    <file alias="AlignJustify">../assets/icons/format-align-justify.svg</file>
+    <file alias="AlignLeft">../assets/icons/format-align-left.svg</file>
+    <file alias="AlignRight">../assets/icons/format-align-right.svg</file>
+    <file alias="Font">../assets/icons/format-font.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Search">
+    <file alias="Goto">../assets/icons/search-goto.svg</file>
+    <file alias="Find">../assets/icons/search-find.svg</file>
+    <file alias="Replace">../assets/icons/search-replace.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Window">
+    <file alias="Close">../assets/icons/window-close.svg</file>
+    <file alias="Next">../assets/icons/window-next.svg</file>
+    <file alias="Prev">../assets/icons/window-prev.svg</file>
+  </qresource>
 </RCC>
