@@ -85,7 +85,7 @@
      <addaction name="me_align_left"/>
      <addaction name="me_align_center"/>
      <addaction name="me_align_right"/>
-     <addaction name="me_align_justify"/>
+     <addaction name="me_align_fill"/>
     </widget>
     <addaction name="me_format_font"/>
     <addaction name="sm_format_align"/>
@@ -340,13 +340,13 @@
     <string>I18N_ME_ALIGN_RIGHT</string>
    </property>
   </action>
-  <action name="me_align_justify">
+  <action name="me_align_fill">
    <property name="icon">
     <iconset resource="Resources.qrc">
-     <normaloff>:/Icons/Format/AlignJustify</normaloff>:/Icons/Format/AlignJustify</iconset>
+     <normaloff>:/Icons/Format/AlignFill</normaloff>:/Icons/Format/AlignFill</iconset>
    </property>
    <property name="text">
-    <string>I18N_ME_ALIGN_JUSTIFY</string>
+    <string>I18N_ME_ALIGN_FILL</string>
    </property>
   </action>
   <action name="me_window_next">
