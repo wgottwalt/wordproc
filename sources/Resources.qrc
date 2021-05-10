@@ -26,8 +26,8 @@
     <file alias="Undo">../assets/icons/edit-undo.svg</file>
   </qresource>
   <qresource prefix="Icons/Format">
+    <file alias="AlignFill">../assets/icons/format-align-fill.svg</file>
     <file alias="AlignCenter">../assets/icons/format-align-center.svg</file>
-    <file alias="AlignJustify">../assets/icons/format-align-justify.svg</file>
     <file alias="AlignLeft">../assets/icons/format-align-left.svg</file>
     <file alias="AlignRight">../assets/icons/format-align-right.svg</file>
     <file alias="Font">../assets/icons/format-font.svg</file>
