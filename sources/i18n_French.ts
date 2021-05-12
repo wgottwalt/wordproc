@@ -128,10 +128,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I18N_ME_ALIGN_JUSTIFY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>I18N_ME_WINDOW_NEXT</source>
         <translation type="unfinished"></translation>
     </message>
@@ -207,6 +203,18 @@
         <source>I18N_ME_THEME_DARKMODE</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_ME_ALIGN_FILL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_DOCOPEN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_DOCOPEN_FILTER</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>
@@ -240,6 +248,13 @@
     </message>
     <message>
         <source>I18N_SEARCH_NEXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TextWindow</name>
+    <message>
+        <source>I18N_TEXTWINDOW</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

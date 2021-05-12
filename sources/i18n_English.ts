@@ -128,10 +128,6 @@
         <translation>Right</translation>
     </message>
     <message>
-        <source>I18N_ME_ALIGN_JUSTIFY</source>
-        <translation>Justify</translation>
-    </message>
-    <message>
         <source>I18N_ME_WINDOW_NEXT</source>
         <translation>Next</translation>
     </message>
@@ -207,6 +203,18 @@
         <source>I18N_ME_THEME_DARKMODE</source>
         <translation>Dark mode</translation>
     </message>
+    <message>
+        <source>I18N_ME_ALIGN_FILL</source>
+        <translation>Fill</translation>
+    </message>
+    <message>
+        <source>I18N_DOCOPEN</source>
+        <translation>Open document ...</translation>
+    </message>
+    <message>
+        <source>I18N_DOCOPEN_FILTER</source>
+        <translation>Wordproc Document (*.wpd);; HTML (*.html *.htm);; Text (*.txt *.asc *.ascii *.md *.doc);; All (*)</translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>
@@ -241,6 +249,13 @@
     <message>
         <source>I18N_SEARCH_NEXT</source>
         <translation>Next</translation>
+    </message>
+</context>
+<context>
+    <name>TextWindow</name>
+    <message>
+        <source>I18N_TEXTWINDOW</source>
+        <translation>TextWindow</translation>
     </message>
 </context>
 </TS>
