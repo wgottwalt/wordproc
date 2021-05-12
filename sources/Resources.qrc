@@ -26,6 +26,9 @@
     <file alias="Undo">../assets/icons/edit-undo.svg</file>
   </qresource>
   <qresource prefix="Icons/Format">
+    <file alias="TextBold">../assets/icons/format-text-bold.svg</file>
+    <file alias="TextItalic">../assets/icons/format-text-italic.svg</file>
+    <file alias="TextUnderline">../assets/icons/format-text-underline.svg</file>
     <file alias="AlignFill">../assets/icons/format-align-fill.svg</file>
     <file alias="AlignCenter">../assets/icons/format-align-center.svg</file>
     <file alias="AlignLeft">../assets/icons/format-align-left.svg</file>

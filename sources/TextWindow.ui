@@ -91,6 +91,10 @@
         <property name="text">
          <string notr="true"/>
         </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/TextBold</normaloff>:/Icons/Format/TextBold</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -98,12 +102,20 @@
         <property name="text">
          <string notr="true"/>
         </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/TextItalic</normaloff>:/Icons/Format/TextItalic</iconset>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btn_font_underline">
         <property name="text">
          <string notr="true"/>
+        </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/TextUnderline</normaloff>:/Icons/Format/TextUnderline</iconset>
         </property>
        </widget>
       </item>
@@ -119,12 +131,20 @@
         <property name="text">
          <string notr="true"/>
         </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/AlignLeft</normaloff>:/Icons/Format/AlignLeft</iconset>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btn_align_center">
         <property name="text">
          <string notr="true"/>
+        </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/AlignCenter</normaloff>:/Icons/Format/AlignCenter</iconset>
         </property>
        </widget>
       </item>
@@ -133,12 +153,20 @@
         <property name="text">
          <string notr="true"/>
         </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/AlignRight</normaloff>:/Icons/Format/AlignRight</iconset>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btn_align_justify">
         <property name="text">
          <string notr="true"/>
+        </property>
+        <property name="icon">
+         <iconset resource="Resources.qrc">
+          <normaloff>:/Icons/Format/AlignFill</normaloff>:/Icons/Format/AlignFill</iconset>
         </property>
        </widget>
       </item>
@@ -166,6 +194,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
