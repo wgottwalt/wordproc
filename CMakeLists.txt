@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED  (VERSION 3.0)
 PROJECT                 (WordProc LANGUAGES CXX)
 
 # packages
-FIND_PACKAGE            (Qt5 COMPONENTS Core Widgets LinguistTools REQUIRED)
+FIND_PACKAGE            (Qt5 COMPONENTS Core LinguistTools PrintSupport Widgets REQUIRED)
 
 # includes and paths/directories
 SET                     (CMAKE_INCLUDE_CURRENT_DIR on)
