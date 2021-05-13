@@ -1,5 +1,8 @@
 #include <QApplication>
+#include <QFileDialog>
 #include <QMdiSubWindow>
+#include <QPrintDialog>
+#include <QPrinter>
 #include <QSettings>
 #include <QStyleFactory>
 #include <QTranslator>
@@ -84,6 +87,34 @@ void MainWindow::changeEvent(QEvent *event)
 void MainWindow::setupActions()
 {
     // app menu
+    connect(mm_app, &QMenu::aboutToShow, [&]()
+    {
+        auto *subwindow = currentTextWindow();
+
+        me_app_save->setEnabled(subwindow ? true : false);
+        me_app_saveas->setEnabled(subwindow ? true : false);
+        me_app_close->setEnabled(subwindow ? true : false);
+        me_app_print->setEnabled(subwindow ? true : false);
+    });
+    connect(me_app_new, &QAction::triggered, [&](){ createTextWindow(); });
+    connect(me_app_open, &QAction::triggered, [&]()
+    {
+        if (const auto filenames = QFileDialog::getOpenFileNames(this, tr("I18N_DOCOPEN"), "./",
+            tr("I18N_DOCOPEN_FILTER")); filenames.size())
+        {
+            for (auto &filename : filenames)
+                createTextWindow(filename);
+        }
+    });
+    connect(me_app_close, &QAction::triggered, [&](){ wid_mdi->closeActiveSubWindow(); });
+    connect(me_app_print, &QAction::triggered, [&]()
+    {
+        QPrinter printer;
+        QPrintDialog dialog(&printer, this);
+
+        dialog.exec();
+    });
+    connect(me_app_quit, &QAction::triggered, this, &MainWindow::close);
 
     // edit menu
 
