@@ -5,6 +5,23 @@
 
 namespace Types
 {
+    enum class Format {
+        Undo,
+        Redo,
+        Cut,
+        Copy,
+        Paste,
+        Clear,
+        SelectAll,
+        Bold,
+        Italic,
+        Underline,
+        Left,
+        Center,
+        Right,
+        Fill
+    };
+
     enum class Language {
         Dutch,
         English,
@@ -22,6 +39,7 @@ namespace Types
     };
 }
 
+Q_DECLARE_METATYPE(Types::Format)
 Q_DECLARE_METATYPE(Types::Language)
 Q_DECLARE_METATYPE(Types::Theme)
 
