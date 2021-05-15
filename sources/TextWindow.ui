@@ -89,6 +89,9 @@
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/TextBold</normaloff>:/Icons/Format/TextBold</iconset>
         </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -100,6 +103,9 @@
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/TextItalic</normaloff>:/Icons/Format/TextItalic</iconset>
         </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -110,6 +116,9 @@
         <property name="icon">
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/TextUnderline</normaloff>:/Icons/Format/TextUnderline</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -129,6 +138,9 @@
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/AlignLeft</normaloff>:/Icons/Format/AlignLeft</iconset>
         </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -139,6 +151,9 @@
         <property name="icon">
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/AlignCenter</normaloff>:/Icons/Format/AlignCenter</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -151,6 +166,9 @@
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/AlignRight</normaloff>:/Icons/Format/AlignRight</iconset>
         </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -161,6 +179,9 @@
         <property name="icon">
          <iconset resource="Resources.qrc">
           <normaloff>:/Icons/Format/AlignFill</normaloff>:/Icons/Format/AlignFill</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
