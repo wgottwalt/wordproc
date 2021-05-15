@@ -6,6 +6,11 @@ TextWindow::TextWindow(QWidget *parent)
 : QWidget(parent), Ui::TextWindow()
 {
     setupUi(this);
+    setupActions();
+
+    wid_text->setFontFamily(btn_font->currentFont().family());
+    wid_text->setFontPointSize(btn_fontsize->value());
+    wid_text->setFocus();
 }
 
 TextWindow::~TextWindow()
@@ -81,4 +86,19 @@ void TextWindow::changeEvent(QEvent *event)
 void TextWindow::setupActions()
 {
     // toolbar buttons
+    connect(btn_font, &QFontComboBox::currentFontChanged, [this](const QFont &font)
+    {
+        wid_text->setFontFamily(font.family());
+        wid_text->setFocus();
+    });
+    connect(btn_fontsize, QOverload<qint32>::of(&QSpinBox::valueChanged), [this](const qint32 val)
+    {
+        wid_text->setFontPointSize(val);
+        wid_text->setFocus();
+    });
+    connect(wid_text, &QTextEdit::cursorPositionChanged, [this]()
+    {
+        btn_font->setCurrentFont(wid_text->currentFont());
+        btn_fontsize->setValue(wid_text->fontPointSize());
+    });
 }
