@@ -55,16 +55,10 @@
         <property name="currentText">
          <string notr="true">DejaVu Sans</string>
         </property>
-        <property name="maxVisibleItems">
-         <number>14</number>
-        </property>
        </widget>
       </item>
       <item>
        <widget class="QSpinBox" name="btn_fontsize">
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
         <property name="specialValueText">
          <string notr="true"/>
         </property>
