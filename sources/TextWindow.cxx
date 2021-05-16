@@ -96,9 +96,25 @@ void TextWindow::setupActions()
         wid_text->setFontPointSize(val);
         wid_text->setFocus();
     });
+
+    connect(btn_font_italic, &QPushButton::clicked, [this]()
+    {
+        formatText(Types::Format::Italic);
+        wid_text->setFocus();
+    });
+    connect(btn_font_underline, &QPushButton::clicked, [this]()
+    {
+        formatText(Types::Format::Underline);
+        wid_text->setFocus();
+    });
+
+    // text area
     connect(wid_text, &QTextEdit::cursorPositionChanged, [this]()
     {
         btn_font->setCurrentFont(wid_text->currentFont());
         btn_fontsize->setValue(wid_text->fontPointSize());
+
+        btn_font_italic->setChecked(wid_text->fontItalic());
+        btn_font_underline->setChecked(wid_text->fontUnderline());
     });
 }
