@@ -112,6 +112,9 @@
      <string>I18N_MM_SEARCH</string>
     </property>
     <addaction name="me_search_find"/>
+    <addaction name="me_search_find_next"/>
+    <addaction name="me_search_find_prev"/>
+    <addaction name="separator"/>
     <addaction name="me_search_replace"/>
     <addaction name="me_search_goto"/>
    </widget>
@@ -456,6 +459,24 @@
    </property>
    <property name="text">
     <string>I18N_ME_THEME_DARKMODE</string>
+   </property>
+  </action>
+  <action name="me_search_find_next">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Find</normaloff>:/Icons/Search/Find</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_FIND_NEXT</string>
+   </property>
+  </action>
+  <action name="me_search_find_prev">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Find</normaloff>:/Icons/Search/Find</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_FIND_PREV</string>
    </property>
   </action>
  </widget>
