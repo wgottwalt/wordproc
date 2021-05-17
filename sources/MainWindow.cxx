@@ -7,6 +7,7 @@
 #include <QStyleFactory>
 #include <QTranslator>
 #include "MainWindow.hxx"
+#include "SearchWindow.hxx"
 #include "TextWindow.hxx"
 
 //--- public constructors ---
@@ -14,11 +15,12 @@
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent), Ui::MainWindow(), _trans(new QTranslator(this)),
   _conf(new QSettings(qApp->organizationName(), qApp->applicationName(), this)),
-  _opalette(qApp->palette()), _lang(Types::Language::English), _theme(Types::Theme::Fusion),
-  _darkmode(false)
+  _search(new SearchWindow), _opalette(qApp->palette()), _lang(Types::Language::English),
+  _theme(Types::Theme::Fusion), _darkmode(false)
 {
     setupUi(this);
     setupActions();
+    _search->setWindowFlags(Qt::WindowStaysOnTopHint);
 
     if (_conf)
     {
@@ -70,6 +72,7 @@ MainWindow::~MainWindow()
         _conf->sync();
     }
 
+    delete _search;
     delete _conf;
     delete _trans;
 }
@@ -82,6 +85,13 @@ void MainWindow::changeEvent(QEvent *event)
         retranslateUi(this);
 
     QMainWindow::changeEvent(event);
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    _search->close();
+
+    QMainWindow::closeEvent(event);
 }
 
 void MainWindow::setupActions()
@@ -121,6 +131,17 @@ void MainWindow::setupActions()
     // format menu
 
     // search menu
+    connect(mm_search, &QMenu::aboutToShow, [&]()
+    {
+        auto *subwin = currentTextWindow();
+
+        me_search_find->setEnabled(subwin ? true : false);
+        me_search_find_next->setEnabled(subwin ? true : false);
+        me_search_find_prev->setEnabled(subwin ? true : false);
+        me_search_replace->setEnabled(subwin ? true : false);
+        me_search_goto->setEnabled(subwin ? true : false);
+    });
+    connect(me_search_find, &QAction::triggered, [&](){ _search->show(); });
 
     // window menu
 

@@ -8,6 +8,7 @@
 
 class QSettings;
 class QTranslator;
+class SearchWindow;
 class TextWindow;
 
 class MainWindow : public QMainWindow, protected Ui::MainWindow {
@@ -26,6 +27,7 @@ public:
 protected:
     //--- protected methods ---
     virtual void changeEvent(QEvent *event) override final;
+    virtual void closeEvent(QCloseEvent *event) override final;
 
     void setupActions();
     void setLanguage(const Types::Language lang = Types::Language::English);
@@ -39,6 +41,7 @@ private:
     //--- private properties ---
     QTranslator *_trans;
     QSettings *_conf;
+    SearchWindow *_search;
     QPalette _opalette;
     Types::Language _lang;
     Types::Theme _theme;
