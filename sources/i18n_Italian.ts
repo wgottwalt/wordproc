@@ -215,6 +215,14 @@
         <source>I18N_DOCOPEN_FILTER</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_ME_SEARCH_FIND_NEXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_SEARCH_FIND_PREV</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>

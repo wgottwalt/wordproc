@@ -215,6 +215,14 @@
         <source>I18N_DOCOPEN_FILTER</source>
         <translation>Wordproc Document (*.wpd);; HTML (*.html *.htm);; Text (*.txt *.asc *.ascii *.md *.doc);; All (*)</translation>
     </message>
+    <message>
+        <source>I18N_ME_SEARCH_FIND_NEXT</source>
+        <translation>Find next</translation>
+    </message>
+    <message>
+        <source>I18N_ME_SEARCH_FIND_PREV</source>
+        <translation>Find previous</translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>
