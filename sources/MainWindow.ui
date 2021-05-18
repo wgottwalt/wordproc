@@ -48,11 +48,26 @@
     <property name="title">
      <string>I18N_MM_APP</string>
     </property>
+    <widget class="QMenu" name="sm_app_export">
+     <property name="title">
+      <string>I18N_SM_APP_EXPORT</string>
+     </property>
+     <property name="icon">
+      <iconset resource="Resources.qrc">
+       <normaloff>:/Icons/Application/Export</normaloff>:/Icons/Application/Export</iconset>
+     </property>
+     <addaction name="me_export_txt"/>
+     <addaction name="me_export_html"/>
+     <addaction name="me_export_odf"/>
+     <addaction name="me_export_pdf"/>
+    </widget>
     <addaction name="me_app_new"/>
     <addaction name="separator"/>
     <addaction name="me_app_open"/>
     <addaction name="me_app_save"/>
     <addaction name="me_app_saveas"/>
+    <addaction name="separator"/>
+    <addaction name="sm_app_export"/>
     <addaction name="separator"/>
     <addaction name="me_app_close"/>
     <addaction name="separator"/>
@@ -96,6 +111,9 @@
     </property>
     <addaction name="me_window_next"/>
     <addaction name="me_window_prev"/>
+    <addaction name="separator"/>
+    <addaction name="me_window_maximize"/>
+    <addaction name="me_window_minimize"/>
     <addaction name="separator"/>
     <addaction name="me_window_close"/>
     <addaction name="me_window_closeall"/>
@@ -477,6 +495,44 @@
    </property>
    <property name="text">
     <string>I18N_ME_SEARCH_FIND_PREV</string>
+   </property>
+  </action>
+  <action name="me_export_txt">
+   <property name="text">
+    <string>I18N_ME_EXPORT_TXT</string>
+   </property>
+  </action>
+  <action name="me_export_html">
+   <property name="text">
+    <string>I18N_ME_EXPORT_HTML</string>
+   </property>
+  </action>
+  <action name="me_export_odf">
+   <property name="text">
+    <string>I18N_ME_EXPORT_ODF</string>
+   </property>
+  </action>
+  <action name="me_export_pdf">
+   <property name="text">
+    <string>I18N_ME_EXPORT_PDF</string>
+   </property>
+  </action>
+  <action name="me_window_maximize">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Maximize</normaloff>:/Icons/Window/Maximize</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_MAXIMIZE</string>
+   </property>
+  </action>
+  <action name="me_window_minimize">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Minimize</normaloff>:/Icons/Window/Minimize</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_MINIMIZE</string>
    </property>
   </action>
  </widget>
