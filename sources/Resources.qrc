@@ -8,6 +8,7 @@
     <file alias="Spanish">i18n_Spanish.qm</file>
   </qresource>
   <qresource prefix="Icons/Application">
+    <file alias="Export">../assets/icons/document-export.svg</file>
     <file alias="Exit">../assets/icons/application-exit.svg</file>
     <file alias="Print">../assets/icons/document-print.svg</file>
     <file alias="Close">../assets/icons/document-close.svg</file>
@@ -41,6 +42,8 @@
     <file alias="Replace">../assets/icons/search-replace.svg</file>
   </qresource>
   <qresource prefix="Icons/Window">
+    <file alias="Minimize">../assets/icons/window-minimize.svg</file>
+    <file alias="Maximize">../assets/icons/window-maximize.svg</file>
     <file alias="Close">../assets/icons/window-close.svg</file>
     <file alias="Next">../assets/icons/window-next.svg</file>
     <file alias="Prev">../assets/icons/window-prev.svg</file>
