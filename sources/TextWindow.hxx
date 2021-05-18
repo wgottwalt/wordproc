@@ -24,4 +24,12 @@ protected:
     //--- protected methods ---
     virtual void changeEvent(QEvent *event) override final;
     void setupActions();
+    void updateWindowTitle();
+
+private:
+    //--- private properties ---
+    QString _filename;
+    QString _search_string;
+    quint64 _id;
+    bool _text_changed;
 };

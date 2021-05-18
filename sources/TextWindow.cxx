@@ -1,16 +1,24 @@
 #include "TextWindow.hxx"
 
+//--- internal stuff ---
+
+static quint64 __counter = 0;
+
 //--- public constructors ---
 
 TextWindow::TextWindow(QWidget *parent)
-: QWidget(parent), Ui::TextWindow()
+: QWidget(parent), Ui::TextWindow(), _filename(""), _search_string(""), _id(__counter++),
+  _text_changed(false)
 {
+    setAttribute(Qt::WA_DeleteOnClose);
     setupUi(this);
     setupActions();
 
     wid_text->setFontFamily(btn_font->currentFont().family());
     wid_text->setFontPointSize(btn_fontsize->value());
     wid_text->setFocus();
+
+    updateWindowTitle();
 }
 
 TextWindow::~TextWindow()
@@ -117,4 +125,15 @@ void TextWindow::setupActions()
         btn_font_italic->setChecked(wid_text->fontItalic());
         btn_font_underline->setChecked(wid_text->fontUnderline());
     });
+    connect(wid_text, &QTextEdit::textChanged, [&]()
+    {
+        _text_changed = true;
+        updateWindowTitle();
+    });
+}
+
+void TextWindow::updateWindowTitle()
+{
+    setWindowTitle("(" + QString::number(_id) + ") " + (_filename.size() ? _filename :
+                   tr("I18N_UNKNOWN_FILE")) + (_text_changed ? "*" : ""));
 }
