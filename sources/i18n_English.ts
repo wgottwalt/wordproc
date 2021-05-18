@@ -265,5 +265,9 @@
         <source>I18N_TEXTWINDOW</source>
         <translation>TextWindow</translation>
     </message>
+    <message>
+        <source>I18N_UNKNOWN_FILE</source>
+        <translation>unknown.txt</translation>
+    </message>
 </context>
 </TS>
