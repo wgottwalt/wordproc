@@ -223,6 +223,34 @@
         <source>I18N_ME_SEARCH_FIND_PREV</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_SM_APP_EXPORT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_TXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_ODF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_WINDOW_MAXIMIZE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_ME_WINDOW_MINIMIZE</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>

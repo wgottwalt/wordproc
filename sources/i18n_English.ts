@@ -223,6 +223,34 @@
         <source>I18N_ME_SEARCH_FIND_PREV</source>
         <translation>Find previous</translation>
     </message>
+    <message>
+        <source>I18N_SM_APP_EXPORT</source>
+        <translation>Export ...</translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_TXT</source>
+        <translation>as TXT ...</translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_HTML</source>
+        <translation>as HTML ...</translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_ODF</source>
+        <translation>as ODF ...</translation>
+    </message>
+    <message>
+        <source>I18N_ME_EXPORT_PDF</source>
+        <translation>as PDF ...</translation>
+    </message>
+    <message>
+        <source>I18N_ME_WINDOW_MAXIMIZE</source>
+        <translation>Maximize</translation>
+    </message>
+    <message>
+        <source>I18N_ME_WINDOW_MINIMIZE</source>
+        <translation>Minimize</translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>
