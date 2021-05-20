@@ -89,22 +89,6 @@
     <addaction name="separator"/>
     <addaction name="me_edit_selectall"/>
    </widget>
-   <widget class="QMenu" name="mm_format">
-    <property name="title">
-     <string>I18N_MM_FORMAT</string>
-    </property>
-    <widget class="QMenu" name="sm_format_align">
-     <property name="title">
-      <string>I18N_SM_FORMAT_ALIGN</string>
-     </property>
-     <addaction name="me_align_left"/>
-     <addaction name="me_align_center"/>
-     <addaction name="me_align_right"/>
-     <addaction name="me_align_fill"/>
-    </widget>
-    <addaction name="me_format_font"/>
-    <addaction name="sm_format_align"/>
-   </widget>
    <widget class="QMenu" name="mm_window">
     <property name="title">
      <string>I18N_MM_WINDOW</string>
@@ -169,7 +153,6 @@
    </widget>
    <addaction name="mm_app"/>
    <addaction name="mm_edit"/>
-   <addaction name="mm_format"/>
    <addaction name="mm_search"/>
    <addaction name="mm_window"/>
    <addaction name="mm_config"/>
