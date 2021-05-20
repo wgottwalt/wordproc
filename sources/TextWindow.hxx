@@ -19,6 +19,11 @@ public:
 
     //--- public methods ---
     void formatText(const Types::Format format);
+    bool undoAvailable() const;
+    bool redoAvailable() const;
+    bool copyAvailable() const;
+    bool textChanged() const;
+    QTextCursor textCursor() const;
 
 protected:
     //--- protected methods ---
@@ -31,5 +36,8 @@ private:
     QString _filename;
     QString _search_string;
     quint64 _id;
+    bool _undo_available;
+    bool _redo_available;
+    bool _copy_available;
     bool _text_changed;
 };

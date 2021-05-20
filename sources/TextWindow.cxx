@@ -8,7 +8,7 @@ static quint64 __counter = 0;
 
 TextWindow::TextWindow(QWidget *parent)
 : QWidget(parent), Ui::TextWindow(), _filename(""), _search_string(""), _id(__counter++),
-  _text_changed(false)
+  _undo_available(false), _redo_available(false), _copy_available(false), _text_changed(false)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setupUi(this);
@@ -81,6 +81,31 @@ void TextWindow::formatText(const Types::Format format)
     }
 }
 
+bool TextWindow::undoAvailable() const
+{
+    return _undo_available;
+}
+
+bool TextWindow::redoAvailable() const
+{
+    return _redo_available;
+}
+
+bool TextWindow::copyAvailable() const
+{
+    return _copy_available;
+}
+
+bool TextWindow::textChanged() const
+{
+    return _text_changed;
+}
+
+QTextCursor TextWindow::textCursor() const
+{
+    return wid_text->textCursor();
+}
+
 //--- protected methods ---
 
 void TextWindow::changeEvent(QEvent *event)
@@ -125,6 +150,9 @@ void TextWindow::setupActions()
         btn_font_italic->setChecked(wid_text->fontItalic());
         btn_font_underline->setChecked(wid_text->fontUnderline());
     });
+    connect(wid_text, &QTextEdit::undoAvailable, [&](const bool avail){ _undo_available = avail; });
+    connect(wid_text, &QTextEdit::redoAvailable, [&](const bool avail){ _redo_available = avail; });
+    connect(wid_text, &QTextEdit::copyAvailable, [&](const bool avail){ _copy_available = avail; });
     connect(wid_text, &QTextEdit::textChanged, [&]()
     {
         _text_changed = true;
