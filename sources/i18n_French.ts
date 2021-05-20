@@ -16,14 +16,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>I18N_MM_FORMAT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I18N_SM_FORMAT_ALIGN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>I18N_MM_WINDOW</source>
         <translation type="unfinished"></translation>
     </message>

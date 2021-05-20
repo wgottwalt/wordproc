@@ -16,14 +16,6 @@
         <translation>Edit</translation>
     </message>
     <message>
-        <source>I18N_MM_FORMAT</source>
-        <translation>Format</translation>
-    </message>
-    <message>
-        <source>I18N_SM_FORMAT_ALIGN</source>
-        <translation>Alignment</translation>
-    </message>
-    <message>
         <source>I18N_MM_WINDOW</source>
         <translation>Window</translation>
     </message>
