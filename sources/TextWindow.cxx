@@ -16,6 +16,8 @@ TextWindow::TextWindow(QWidget *parent)
 
     wid_text->setFontFamily(btn_font->currentFont().family());
     wid_text->setFontPointSize(btn_fontsize->value());
+    btn_align_left->setChecked(true);
+    formatText(Types::Format::Left);
     wid_text->setFocus();
 
     updateWindowTitle();
@@ -71,12 +73,19 @@ void TextWindow::formatText(const Types::Format format)
             return;
 
         case Types::Format::Left:
+            wid_text->setAlignment(Qt::AlignLeft);
             return;
+
         case Types::Format::Center:
+            wid_text->setAlignment(Qt::AlignCenter);
             return;
+
         case Types::Format::Right:
+            wid_text->setAlignment(Qt::AlignRight);
             return;
+
         case Types::Format::Fill:
+            wid_text->setAlignment(Qt::AlignJustify);
             return;
     }
 }
@@ -124,30 +133,67 @@ void TextWindow::changeEvent(QEvent *event)
 void TextWindow::setupActions()
 {
     // toolbar buttons
-    connect(btn_font, &QFontComboBox::currentFontChanged, [this](const QFont &font)
+    connect(btn_font, &QFontComboBox::currentFontChanged, [&](const QFont &font)
     {
         wid_text->setFontFamily(font.family());
         wid_text->setFocus();
     });
-    connect(btn_fontsize, QOverload<qint32>::of(&QSpinBox::valueChanged), [this](const qint32 val)
+    connect(btn_fontsize, QOverload<qint32>::of(&QSpinBox::valueChanged), [&](const qint32 val)
     {
         wid_text->setFontPointSize(val);
         wid_text->setFocus();
     });
 
-    connect(btn_font_italic, &QPushButton::clicked, [this]()
+    connect(btn_font_italic, &QPushButton::clicked, [&]()
     {
         formatText(Types::Format::Italic);
         wid_text->setFocus();
     });
-    connect(btn_font_underline, &QPushButton::clicked, [this]()
+    connect(btn_font_underline, &QPushButton::clicked, [&]()
     {
         formatText(Types::Format::Underline);
         wid_text->setFocus();
     });
 
+    connect(btn_align_left, &QPushButton::pressed, [&]()
+    {
+        btn_align_left->setChecked(true);
+        btn_align_center->setChecked(false);
+        btn_align_right->setChecked(false);
+        btn_align_justify->setChecked(false);
+        formatText(Types::Format::Left);
+        wid_text->setFocus();
+    });
+    connect(btn_align_center, &QPushButton::pressed, [&]()
+    {
+        btn_align_left->setChecked(false);
+        btn_align_center->setChecked(true);
+        btn_align_right->setChecked(false);
+        btn_align_justify->setChecked(false);
+        formatText(Types::Format::Center);
+        wid_text->setFocus();
+    });
+    connect(btn_align_right, &QPushButton::pressed, [&]()
+    {
+        btn_align_left->setChecked(false);
+        btn_align_center->setChecked(false);
+        btn_align_right->setChecked(true);
+        btn_align_justify->setChecked(false);
+        formatText(Types::Format::Right);
+        wid_text->setFocus();
+    });
+    connect(btn_align_justify, &QPushButton::pressed, [&]()
+    {
+        btn_align_left->setChecked(false);
+        btn_align_center->setChecked(false);
+        btn_align_right->setChecked(false);
+        btn_align_justify->setChecked(true);
+        formatText(Types::Format::Fill);
+        wid_text->setFocus();
+    });
+
     // text area
-    connect(wid_text, &QTextEdit::cursorPositionChanged, [this]()
+    connect(wid_text, &QTextEdit::cursorPositionChanged, [&]()
     {
         btn_font->setCurrentFont(wid_text->currentFont());
         btn_fontsize->setValue(wid_text->fontPointSize());
