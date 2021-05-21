@@ -22,6 +22,7 @@ public:
     bool undoAvailable() const;
     bool redoAvailable() const;
     bool copyAvailable() const;
+    bool pasteAvailable() const;
     bool textChanged() const;
     QTextCursor textCursor() const;
 

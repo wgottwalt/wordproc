@@ -96,6 +96,11 @@ bool TextWindow::copyAvailable() const
     return _copy_available;
 }
 
+bool TextWindow::pasteAvailable() const
+{
+    return wid_text->canPaste();
+}
+
 bool TextWindow::textChanged() const
 {
     return _text_changed;
