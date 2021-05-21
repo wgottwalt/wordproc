@@ -127,8 +127,53 @@ void MainWindow::setupActions()
     connect(me_app_quit, &QAction::triggered, this, &MainWindow::close);
 
     // edit menu
+    connect(mm_app, &QMenu::aboutToShow, [&]()
+    {
+        auto *win = currentTextWindow();
 
-    // format menu
+        me_edit_undo->setEnabled((win && win->undoAvailable()) ? true : false);
+        me_edit_redo->setEnabled((win && win->redoAvailable()) ? true : false);
+        me_edit_cut->setEnabled((win && win->copyAvailable()) ? true : false);
+        me_edit_copy->setEnabled((win && win->copyAvailable()) ? true : false);
+        me_edit_paste->setEnabled((win && win->pasteAvailable()) ? true : false);
+        me_edit_clear->setEnabled((win && win->textCursor().selectedText().size()) ? true : false);
+        me_edit_selectall->setEnabled(win ? true : false);
+    });
+    connect(me_edit_undo, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::Undo);
+    });
+    connect(me_edit_redo, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::Redo);
+    });
+    connect(me_edit_cut, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::Cut);
+    });
+    connect(me_edit_copy, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::Copy);
+    });
+    connect(me_edit_paste, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::Paste);
+    });
+    connect(me_edit_clear, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::Clear);
+    });
+    connect(me_edit_selectall, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->formatText(Types::Format::SelectAll);
+    });
 
     // search menu
     connect(mm_search, &QMenu::aboutToShow, [&]()
