@@ -127,7 +127,7 @@ void MainWindow::setupActions()
     connect(me_app_quit, &QAction::triggered, this, &MainWindow::close);
 
     // edit menu
-    connect(mm_app, &QMenu::aboutToShow, [&]()
+    connect(mm_edit, &QMenu::aboutToShow, [&]()
     {
         auto *win = currentTextWindow();
 
