@@ -189,6 +189,31 @@ void MainWindow::setupActions()
     connect(me_search_find, &QAction::triggered, [&](){ _search->show(); });
 
     // window menu
+    connect(mm_window, &QMenu::aboutToShow, [&]()
+    {
+        auto *win = currentTextWindow();
+
+        me_window_next->setEnabled((win && !wid_mdi->subWindowList().isEmpty()) ? true : false);
+        me_window_prev->setEnabled((win && !wid_mdi->subWindowList().isEmpty()) ? true : false);
+        me_window_maximize->setEnabled(win ? true : false);
+        me_window_minimize->setEnabled(win ? true : false);
+        me_window_close->setEnabled(win ? true : false);
+        me_window_closeall->setEnabled(win ? true : false);
+    });
+    connect(me_window_next, &QAction::triggered, [&](){ wid_mdi->activateNextSubWindow(); });
+    connect(me_window_prev, &QAction::triggered, [&](){ wid_mdi->activatePreviousSubWindow(); });
+    connect(me_window_maximize, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->showMaximized();
+    });
+    connect(me_window_minimize, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+            win->showMinimized();
+    });
+    connect(me_window_close, &QAction::triggered, [&](){ wid_mdi->closeActiveSubWindow(); });
+    connect(me_window_closeall, &QAction::triggered, [&](){ wid_mdi->closeAllSubWindows(); });
 
     // config menu
     connect(me_lang_english, &QAction::triggered, [&](){ setLanguage(); });
