@@ -386,10 +386,16 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
     QMdiSubWindow *subwin = wid_mdi->addSubWindow(new TextWindow);
     TextWindow *textwin = qobject_cast<TextWindow *>(subwin->widget());
     QAction *action = mm_window->addAction(textwin->windowTitle(), subwin, [this,subwin]()
-        { wid_mdi->setActiveSubWindow(subwin); });
+                                           { wid_mdi->setActiveSubWindow(subwin); });
+    qint32 len = wid_mdi->subWindowList().size() - 1;
 
     connect(textwin, &TextWindow::windowTitleChanged, action, &QAction::setText);
-    connect(textwin, &TextWindow::destroyed, [this,action](){ mm_window->removeAction(action); });
+    connect(textwin, &TextWindow::destroyed, [this,action]()
+    {
+        mm_window->removeAction(action);
+        if (const auto list = mm_window->actions(); !list.isEmpty() && list.last()->isSeparator())
+            mm_window->removeAction(list.last());
+    });
 
 #if 0
     if (!filename.isEmpty() && !textwin->openFile(filename))
@@ -398,7 +404,10 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
         return nullptr;
     }
 #endif
-    subwin->setGeometry(subwin->x(), subwin->y(), width() / 2, height() * 2 / 3);
+    if (len == 0)
+        mm_window->insertSeparator(action);
+
+    subwin->setGeometry(len * 10 , len * 10, width() * 2 / 3, height() * 2 / 3);
     textwin->show();
 
     return textwin;
