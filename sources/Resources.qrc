@@ -18,7 +18,7 @@
     <file alias="New">../assets/icons/document-new.svg</file>
   </qresource>
   <qresource prefix="Icons/Edit">
-    <file alias="SelectAll">../assets/icons/edit-select-all.svg</file>
+    <file alias="SelectAll">../assets/icons/edit-selectall.svg</file>
     <file alias="Paste">../assets/icons/edit-paste.svg</file>
     <file alias="Cut">../assets/icons/edit-cut.svg</file>
     <file alias="Copy">../assets/icons/edit-copy.svg</file>
