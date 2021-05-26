@@ -304,6 +304,10 @@
    </property>
   </action>
   <action name="me_search_goto">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Goto</normaloff>:/Icons/Search/Goto</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_SEARCH_GOTO</string>
    </property>
