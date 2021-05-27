@@ -4,8 +4,11 @@
 #include "ui_TextWindow.h"
 #include "Types.hxx"
 
+class MainWindow;
+
 class TextWindow : public QWidget, public Ui::TextWindow {
     Q_OBJECT
+    friend class MainWindow;
 public:
     //--- public constructors ---
     TextWindow(QWidget *parent = nullptr);
@@ -31,6 +34,7 @@ protected:
     virtual void changeEvent(QEvent *event) override final;
     void setupActions();
     void updateWindowTitle();
+    void setIcons(const QString &prefix);
 
 private:
     //--- private properties ---

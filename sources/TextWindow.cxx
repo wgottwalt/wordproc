@@ -1,4 +1,5 @@
 #include "TextWindow.hxx"
+#include "MainWindow.hxx"
 
 //--- internal stuff ---
 
@@ -215,4 +216,16 @@ void TextWindow::updateWindowTitle()
 {
     setWindowTitle("(" + QString::number(_id) + ") " + (_filename.size() ? _filename :
                    tr("I18N_UNKNOWN_FILE")) + (_text_changed ? "*" : ""));
+}
+
+void TextWindow::setIcons(const QString &prefix)
+{
+    // toolbar
+    btn_font_bold->setIcon(QIcon(prefix + "Format/TextBold"));
+    btn_font_italic->setIcon(QIcon(prefix + "Format/TextItalic"));
+    btn_font_underline->setIcon(QIcon(prefix + "Format/TextUnderline"));
+    btn_align_left->setIcon(QIcon(prefix + "Format/AlignLeft"));
+    btn_align_center->setIcon(QIcon(prefix + "Format/AlignCenter"));
+    btn_align_right->setIcon(QIcon(prefix + "Format/AlignRight"));
+    btn_align_justify->setIcon(QIcon(prefix + "Format/AlignFill"));
 }

@@ -347,6 +347,8 @@ void MainWindow::setTheme(const Types::Theme theme)
 
 void MainWindow::setDarkmode(const bool mode)
 {
+    QString prefix;
+
     if (mode)
     {
         QPalette dark;
@@ -373,12 +375,55 @@ void MainWindow::setDarkmode(const bool mode)
         dark.setColor(QPalette::Disabled, QPalette::HighlightedText, QColor(127, 127, 127));
 
         qApp->setPalette(dark);
+        prefix = ":/DarkIcons/";
     }
     else
+    {
         qApp->setPalette(_opalette);
+        prefix = ":/Icons/";
+    }
+    emit switchIcons(prefix);
+    setIcons(prefix);
 
     _darkmode = mode;
     me_theme_darkmode->setChecked(mode);
+}
+
+void MainWindow::setIcons(const QString &prefix)
+{
+    // app menu
+    me_app_new->setIcon(QIcon(prefix + "Application/New"));
+    me_app_open->setIcon(QIcon(prefix + "Application/Open"));
+    me_app_save->setIcon(QIcon(prefix + "Application/Save"));
+    me_app_saveas->setIcon(QIcon(prefix + "Application/SaveAs"));
+    sm_app_export->setIcon(QIcon(prefix + "Application/Export"));
+    me_app_close->setIcon(QIcon(prefix + "Application/Close"));
+    me_app_print->setIcon(QIcon(prefix + "Application/Print"));
+    me_app_quit->setIcon(QIcon(prefix + "Application/Exit"));
+
+    // edit menu
+    me_edit_undo->setIcon(QIcon(prefix + "Edit/Undo"));
+    me_edit_redo->setIcon(QIcon(prefix + "Edit/Redo"));
+    me_edit_cut->setIcon(QIcon(prefix + "Edit/Cut"));
+    me_edit_copy->setIcon(QIcon(prefix + "Edit/Copy"));
+    me_edit_paste->setIcon(QIcon(prefix + "Edit/Paste"));
+    me_edit_clear->setIcon(QIcon(prefix + "Edit/Clear"));
+    me_edit_selectall->setIcon(QIcon(prefix + "Edit/SelectAll"));
+
+    // search menu
+    me_search_find->setIcon(QIcon(prefix + "Search/Find"));
+    me_search_find_next->setIcon(QIcon(prefix + "Search/Find"));
+    me_search_find_prev->setIcon(QIcon(prefix + "Search/Find"));
+    me_search_replace->setIcon(QIcon(prefix + "Search/Replace"));
+    me_search_goto->setIcon(QIcon(prefix + "Search/Goto"));
+
+    // window menu
+    me_window_next->setIcon(QIcon(prefix + "Window/Next"));
+    me_window_prev->setIcon(QIcon(prefix + "Window/Prev"));
+    me_window_maximize->setIcon(QIcon(prefix + "Window/Maximize"));
+    me_window_minimize->setIcon(QIcon(prefix + "Window/Minimize"));
+    me_window_close->setIcon(QIcon(prefix + "Window/Close"));
+    me_window_closeall->setIcon(QIcon(prefix + "Window/Close"));
 }
 
 TextWindow *MainWindow::createTextWindow(const QString &filename)
@@ -396,6 +441,7 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
         if (const auto list = mm_window->actions(); !list.isEmpty() && list.last()->isSeparator())
             mm_window->removeAction(list.last());
     });
+    connect(this, &MainWindow::switchIcons, textwin, &TextWindow::setIcons);
 
 #if 0
     if (!filename.isEmpty() && !textwin->openFile(filename))

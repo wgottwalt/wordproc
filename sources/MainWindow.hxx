@@ -33,6 +33,7 @@ protected:
     void setLanguage(const Types::Language lang = Types::Language::English);
     void setTheme(const Types::Theme theme = Types::Theme::Fusion);
     void setDarkmode(const bool mode = true);
+    void setIcons(const QString &prefix);
 
     TextWindow *createTextWindow(const QString &filename = "");
     TextWindow *currentTextWindow();
@@ -46,4 +47,8 @@ private:
     Types::Language _lang;
     Types::Theme _theme;
     bool _darkmode;
+
+signals:
+    //--- Qt signals ---
+    void switchIcons(const QString &prefix);
 };
