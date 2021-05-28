@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QFileDialog>
 #include <QMdiSubWindow>
+#include <QMessageBox>
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QSettings>
@@ -230,6 +231,8 @@ void MainWindow::setupActions()
     connect(me_theme_darkmode, &QAction::toggled, [&](const bool on){ setDarkmode(on); });
 
     // help menu
+    // me_help_app
+    connect(me_help_qt, &QAction::triggered, [this](){ QMessageBox::aboutQt(this); });
 }
 
 void MainWindow::setLanguage(const Types::Language lang)
