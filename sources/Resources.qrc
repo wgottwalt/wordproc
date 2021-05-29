@@ -7,6 +7,10 @@
     <file alias="German">i18n_German.qm</file>
     <file alias="Spanish">i18n_Spanish.qm</file>
   </qresource>
+  <qresource prefix="Logos">
+    <file alias="App">../assets/icons/logo-app.svg</file>
+    <file alias="Qt">../assets/icons/logo-qt.svg</file>
+  </qresource>
   <qresource prefix="DarkIcons/Application">
     <file alias="Exit">../assets/icons/dark-application-exit.svg</file>
     <file alias="Close">../assets/icons/dark-document-close.svg</file>
