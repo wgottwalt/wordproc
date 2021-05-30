@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>I18N_MAINWINDOW</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/Logos/App</normaloff>:/Logos/App</iconset>
+  </property>
   <widget class="QWidget" name="wid_center">
    <layout class="QGridLayout" name="lay_mainwindow">
     <property name="leftMargin">
@@ -394,11 +398,19 @@
    </property>
   </action>
   <action name="me_help_app">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Logos/App</normaloff>:/Logos/App</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_HELP_APP</string>
    </property>
   </action>
   <action name="me_help_qt">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Logos/Qt</normaloff>:/Logos/Qt</iconset>
+   </property>
    <property name="text">
     <string>I18N_ME_HELP_QT</string>
    </property>
