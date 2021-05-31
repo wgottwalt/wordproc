@@ -28,6 +28,8 @@ public:
     bool pasteAvailable() const;
     bool textChanged() const;
     QTextCursor textCursor() const;
+    bool load(const QString &filename);
+    bool save(const QString &filename) const;
 
 protected:
     //--- protected methods ---
@@ -35,6 +37,16 @@ protected:
     void setupActions();
     void updateWindowTitle();
     void setIcons(const QString &prefix);
+    bool loadWPD(const QString &filename);
+    bool loadTXT(const QString &filename);
+    bool loadHTML(const QString &filename);
+    bool loadODF(const QString &filename);
+    bool loadPDF(const QString &filename);
+    bool saveWPD(const QString &filename) const;
+    bool saveTXT(const QString &filename) const;
+    bool saveHTML(const QString &filename) const;
+    bool saveODF(const QString &filename) const;
+    bool savePDF(const QString &filename) const;
 
 private:
     //--- private properties ---

@@ -121,6 +121,16 @@ QTextCursor TextWindow::textCursor() const
     return wid_text->textCursor();
 }
 
+bool TextWindow::load(const QString &filename)
+{
+    return false;
+}
+
+bool TextWindow::save(const QString &filename) const
+{
+    return false;
+}
+
 //--- protected methods ---
 
 void TextWindow::changeEvent(QEvent *event)
@@ -228,4 +238,54 @@ void TextWindow::setIcons(const QString &prefix)
     btn_align_center->setIcon(QIcon(prefix + "Format/AlignCenter"));
     btn_align_right->setIcon(QIcon(prefix + "Format/AlignRight"));
     btn_align_justify->setIcon(QIcon(prefix + "Format/AlignFill"));
+}
+
+bool TextWindow::loadWPD(const QString &filename)
+{
+    return false;
+}
+
+bool TextWindow::loadTXT(const QString &filename)
+{
+    return false;
+}
+
+bool TextWindow::loadHTML(const QString &filename)
+{
+    return false;
+}
+
+bool TextWindow::loadODF(const QString &filename)
+{
+    return false;
+}
+
+bool TextWindow::loadPDF(const QString &filename)
+{
+    return false;
+}
+
+bool TextWindow::saveWPD(const QString &filename) const
+{
+    return false;
+}
+
+bool TextWindow::saveTXT(const QString &filename) const
+{
+    return false;
+}
+
+bool TextWindow::saveHTML(const QString &filename) const
+{
+    return false;
+}
+
+bool TextWindow::saveODF(const QString &filename) const
+{
+    return false;
+}
+
+bool TextWindow::savePDF(const QString &filename) const
+{
+    return false;
 }

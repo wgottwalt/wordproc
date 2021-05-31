@@ -6,7 +6,7 @@
 namespace Types
 {
     enum class File {
-        WDP,
+        WPD,
         TXT,
         HTML,
         ODF,
