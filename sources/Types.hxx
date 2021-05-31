@@ -5,6 +5,14 @@
 
 namespace Types
 {
+    enum class File {
+        WDP,
+        TXT,
+        HTML,
+        ODF,
+        PDF
+    };
+
     enum class Format {
         Undo,
         Redo,
@@ -39,6 +47,7 @@ namespace Types
     };
 }
 
+Q_DECLARE_METATYPE(Types::File)
 Q_DECLARE_METATYPE(Types::Format)
 Q_DECLARE_METATYPE(Types::Language)
 Q_DECLARE_METATYPE(Types::Theme)
