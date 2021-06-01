@@ -1,4 +1,51 @@
+#include <QRegExp>
 #include "Types.hxx"
+
+static const QString WPDFile(".([Ww][Pp][Dd])$");
+static const QString TXTFile(".([Tt][Ee]?[Xx][Tt]|[Aa][Ss][Cc][Ii]{0,2})$");
+static const QString HTMLFile(".([Hh][Tt]?[Mm][Ll]?)$");
+static const QString ODFFile(".([Oo][Dd][Ff])$");
+static const QString PDFFile(".([Pp][Dd][Ff])$");
+
+const QString fileToString(const Types::File file)
+{
+    switch (file)
+    {
+        case Types::File::WPD:
+            return WPDFile;
+        case Types::File::TXT:
+            return TXTFile;
+        case Types::File::HTML:
+            return HTMLFile;
+        case Types::File::ODF:
+            return ODFFile;
+        case Types::File::PDF:
+            return PDFFile;
+        case Types::File::Undef:
+        default:
+            return "";
+    }
+}
+
+Types::File stringToFile(const QString &str)
+{
+    if (QRegExp regexp(WPDFile); regexp.exactMatch(str))
+        return Types::File::WPD;
+
+    if (QRegExp regexp(TXTFile); regexp.exactMatch(str))
+        return Types::File::TXT;
+
+    if (QRegExp regexp(HTMLFile); regexp.exactMatch(str))
+        return Types::File::HTML;
+
+    if (QRegExp regexp(ODFFile); regexp.exactMatch(str))
+        return Types::File::ODF;
+
+    if (QRegExp regexp(PDFFile); regexp.exactMatch(str))
+        return Types::File::PDF;
+
+    return Types::File::Undef;
+}
 
 const QString languageToString(const Types::Language lang)
 {
