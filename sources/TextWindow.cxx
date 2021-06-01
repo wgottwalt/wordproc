@@ -122,19 +122,28 @@ bool TextWindow::filenameValid() const
     return _filename_valid;
 }
 
+QString TextWindow::filename() const
+{
+    return _filename;
+}
+
 QTextCursor TextWindow::textCursor() const
 {
     return wid_text->textCursor();
 }
 
-bool TextWindow::load(const QString &filename)
+bool TextWindow::loadFile(const QString &filename)
 {
     return false;
 }
 
-bool TextWindow::save(const QString &filename) const
+bool TextWindow::saveFile(const QString &filename) const
 {
     return false;
+}
+
+Types::File TextWindow::identifyFile(const QString &filename) const
+{
 }
 
 //--- protected methods ---

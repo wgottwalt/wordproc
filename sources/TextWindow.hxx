@@ -28,9 +28,11 @@ public:
     bool pasteAvailable() const;
     bool textChanged() const;
     bool filenameValid() const;
+    QString filename() const;
     QTextCursor textCursor() const;
-    bool load(const QString &filename);
-    bool save(const QString &filename) const;
+    bool loadFile(const QString &filename);
+    bool saveFile(const QString &filename) const;
+    Types::File identifyFile(const QString &filename) const;
 
 protected:
     //--- protected methods ---
