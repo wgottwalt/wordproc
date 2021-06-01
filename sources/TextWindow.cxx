@@ -9,7 +9,8 @@ static quint64 __counter = 0;
 
 TextWindow::TextWindow(QWidget *parent)
 : QWidget(parent), Ui::TextWindow(), _filename(""), _search_string(""), _id(__counter++),
-  _undo_available(false), _redo_available(false), _copy_available(false), _text_changed(false)
+  _undo_available(false), _redo_available(false), _copy_available(false), _text_changed(false),
+  _filename_valid(false)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setupUi(this);
@@ -114,6 +115,11 @@ bool TextWindow::pasteAvailable() const
 bool TextWindow::textChanged() const
 {
     return _text_changed;
+}
+
+bool TextWindow::filenameValid() const
+{
+    return _filename_valid;
 }
 
 QTextCursor TextWindow::textCursor() const

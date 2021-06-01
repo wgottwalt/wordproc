@@ -27,6 +27,7 @@ public:
     bool copyAvailable() const;
     bool pasteAvailable() const;
     bool textChanged() const;
+    bool filenameValid() const;
     QTextCursor textCursor() const;
     bool load(const QString &filename);
     bool save(const QString &filename) const;
@@ -57,4 +58,5 @@ private:
     bool _redo_available;
     bool _copy_available;
     bool _text_changed;
+    bool _filename_valid;
 };
