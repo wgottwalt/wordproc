@@ -111,10 +111,19 @@ void MainWindow::setupActions()
     connect(me_app_open, &QAction::triggered, [&]()
     {
         if (const auto filenames = QFileDialog::getOpenFileNames(this, tr("I18N_DOCOPEN"), "./",
-            tr("I18N_DOCOPEN_FILTER")); filenames.size())
+            tr("I18N_DOCOPEN_FILTER")); !filenames.isEmpty())
         {
             for (auto &filename : filenames)
                 createTextWindow(filename);
+        }
+    });
+    connect(me_app_saveas, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+        {
+            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_DOCSAVE"), "./",
+              tr("I18N_DOCSAVE_FILTER")); !filename.isEmpty())
+                win->saveFile(filename);
         }
     });
     connect(me_app_close, &QAction::triggered, [&](){ wid_mdi->closeActiveSubWindow(); });
