@@ -134,16 +134,42 @@ QTextCursor TextWindow::textCursor() const
 
 bool TextWindow::loadFile(const QString &filename)
 {
-    return false;
+    switch (stringToFile(filename))
+    {
+        case Types::File::WPD:
+            return loadWPD(filename);
+        case Types::File::TXT:
+            return loadTXT(filename);
+        case Types::File::HTML:
+            return loadHTML(filename);
+        case Types::File::ODF:
+            return loadODF(filename);
+        case Types::File::PDF:
+            return loadPDF(filename);
+        case Types::File::Undef:
+        default:
+            return false;;
+    }
 }
 
 bool TextWindow::saveFile(const QString &filename) const
 {
-    return false;
-}
-
-Types::File TextWindow::identifyFile(const QString &filename) const
-{
+    switch (stringToFile(filename))
+    {
+        case Types::File::WPD:
+            return saveWPD(filename);
+        case Types::File::TXT:
+            return saveTXT(filename);
+        case Types::File::HTML:
+            return saveHTML(filename);
+        case Types::File::ODF:
+            return saveODF(filename);
+        case Types::File::PDF:
+            return savePDF(filename);
+        case Types::File::Undef:
+        default:
+            return false;;
+    }
 }
 
 //--- protected methods ---

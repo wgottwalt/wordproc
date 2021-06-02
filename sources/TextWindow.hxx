@@ -32,7 +32,6 @@ public:
     QTextCursor textCursor() const;
     bool loadFile(const QString &filename);
     bool saveFile(const QString &filename) const;
-    Types::File identifyFile(const QString &filename) const;
 
 protected:
     //--- protected methods ---
