@@ -2,7 +2,7 @@
 #include "Types.hxx"
 
 static const QString WPDFile(".([Ww][Pp][Dd])$");
-static const QString TXTFile(".([Tt][Ee]?[Xx][Tt]|[Aa][Ss][Cc][Ii]{0,2})$");
+static const QString TXTFile(".([Tt][Ee]?[Xx][Tt]|[Aa][Ss][Cc][Ii]{0,2}|[Mm][Dd]|[Dd][Oo][Cc])$");
 static const QString HTMLFile(".([Hh][Tt]?[Mm][Ll]?)$");
 static const QString ODFFile(".([Oo][Dd][Ff])$");
 static const QString PDFFile(".([Pp][Dd][Ff])$");
