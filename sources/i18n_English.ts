@@ -243,6 +243,15 @@
         <source>I18N_ME_WINDOW_MINIMIZE</source>
         <translation>Minimize</translation>
     </message>
+    <message>
+        <source>I18N_DOCSAVE</source>
+        <translation>Save document ...</translation>
+    </message>
+    <message>
+        <source>I18N_DOCSAVE_FILTER</source>
+        <translatorcomment>Wordproc Document (*.wpd);;</translatorcomment>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>

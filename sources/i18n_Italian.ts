@@ -243,6 +243,14 @@
         <source>I18N_ME_WINDOW_MINIMIZE</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_DOCSAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_DOCSAVE_FILTER</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>
