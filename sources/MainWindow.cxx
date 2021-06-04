@@ -140,6 +140,42 @@ void MainWindow::setupActions()
                 win->saveFile(filename);
         }
     });
+    connect(me_export_txt, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+        {
+            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_TXT"),
+              "./", tr("I18N_EXPORT_TXT_FILTER")); !filename.isEmpty())
+                win->saveFile(filename);
+        }
+    });
+    connect(me_export_html, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+        {
+            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_HTML"),
+              "./", tr("I18N_EXPORT_HTML_FILTER")); !filename.isEmpty())
+                win->saveFile(filename);
+        }
+    });
+    connect(me_export_odf, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+        {
+            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_ODF"),
+              "./", tr("I18N_EXPORT_ODF_FILTER")); !filename.isEmpty())
+                win->saveFile(filename);
+        }
+    });
+    connect(me_export_txt, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+        {
+            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_PDF"),
+              "./", tr("I18N_EXPORT_PDF_FILTER")); !filename.isEmpty())
+                win->saveFile(filename);
+        }
+    });
     connect(me_app_close, &QAction::triggered, [&](){ wid_mdi->closeActiveSubWindow(); });
     connect(me_app_print, &QAction::triggered, [&]()
     {
