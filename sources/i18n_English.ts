@@ -249,8 +249,7 @@
     </message>
     <message>
         <source>I18N_DOCSAVE_FILTER</source>
-        <translatorcomment>Wordproc Document (*.wpd);;</translatorcomment>
-        <translation></translation>
+        <translation>Wordproc Document (*.wpd)</translation>
     </message>
 </context>
 <context>
