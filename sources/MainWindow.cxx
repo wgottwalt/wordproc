@@ -117,6 +117,20 @@ void MainWindow::setupActions()
                 createTextWindow(filename);
         }
     });
+    connect(me_app_save, &QAction::triggered, [&]()
+    {
+        if (auto *win = currentTextWindow(); win)
+        {
+            if (!win->filenameValid())
+            {
+                if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_DOCSAVE"),
+                  "./", tr("I18N_DOCSAVE_FILTER")); !filename.isEmpty())
+                    win->saveFile(filename);
+            }
+            else
+                win->saveFile(win->filename());
+        }
+    });
     connect(me_app_saveas, &QAction::triggered, [&]()
     {
         if (auto *win = currentTextWindow(); win)
