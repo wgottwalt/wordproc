@@ -251,6 +251,38 @@
         <source>I18N_DOCSAVE_FILTER</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>I18N_EXPORT_TXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_TXT_FILTER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_HTML_FILTER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_ODF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_ODF_FILTER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_PDF_FILTER</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>

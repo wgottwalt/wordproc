@@ -251,6 +251,38 @@
         <source>I18N_DOCSAVE_FILTER</source>
         <translation>Wordproc Document (*.wpd)</translation>
     </message>
+    <message>
+        <source>I18N_EXPORT_TXT</source>
+        <translation>Export as TXT ...</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_TXT_FILTER</source>
+        <translation>Wordproc Document (*.txt *.asc *.ascii *.md *.doc)</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_HTML</source>
+        <translation>Export as HTML ...</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_HTML_FILTER</source>
+        <translation>Wordproc Document (*.html *.htm)</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_ODF</source>
+        <translation>Export as ODF ...</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_ODF_FILTER</source>
+        <translation>Wordproc Document (*.odf)</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_PDF</source>
+        <translation>Export as PDF ...</translation>
+    </message>
+    <message>
+        <source>I18N_EXPORT_PDF_FILTER</source>
+        <translation>Wordproc Document (*.pdf)</translation>
+    </message>
 </context>
 <context>
     <name>SearchWindow</name>
