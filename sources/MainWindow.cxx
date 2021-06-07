@@ -167,7 +167,7 @@ void MainWindow::setupActions()
                 win->saveFile(filename);
         }
     });
-    connect(me_export_txt, &QAction::triggered, [&]()
+    connect(me_export_pdf, &QAction::triggered, [&]()
     {
         if (auto *win = currentTextWindow(); win)
         {
