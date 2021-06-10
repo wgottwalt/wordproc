@@ -1,3 +1,5 @@
+#include <QFile>
+#include <QTextStream>
 #include "TextWindow.hxx"
 #include "MainWindow.hxx"
 
@@ -313,11 +315,31 @@ bool TextWindow::saveWPD(const QString &filename) const
 
 bool TextWindow::saveTXT(const QString &filename) const
 {
+    if (QFile ofile(filename); ofile.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream out(&ofile);
+
+        out << wid_text->toPlainText();
+        ofile.close();
+
+        return true;
+    }
+
     return false;
 }
 
 bool TextWindow::saveHTML(const QString &filename) const
 {
+    if (QFile ofile(filename); ofile.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream out(&ofile);
+
+        out << wid_text->toHtml();
+        ofile.close();
+
+        return true;
+    }
+
     return false;
 }
 
