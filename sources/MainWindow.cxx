@@ -123,9 +123,13 @@ void MainWindow::setupActions()
         {
             if (!win->filenameValid())
             {
-                if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_DOCSAVE"),
-                  "./", tr("I18N_DOCSAVE_FILTER")); !filename.isEmpty())
+                if (auto filename = QFileDialog::getSaveFileName(this, tr("I18N_DOCSAVE"), "./",
+                    tr("I18N_DOCSAVE_FILTER")); !filename.isEmpty())
+                {
+                    if (stringToFile(filename) != Types::File::WPD)
+                        filename += ".wpd";
                     win->saveFile(filename);
+                }
             }
             else
                 win->saveFile(win->filename());
@@ -135,45 +139,65 @@ void MainWindow::setupActions()
     {
         if (auto *win = currentTextWindow(); win)
         {
-            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_DOCSAVE"), "./",
-              tr("I18N_DOCSAVE_FILTER")); !filename.isEmpty())
+            if (auto filename = QFileDialog::getSaveFileName(this, tr("I18N_DOCSAVE"), "./",
+                tr("I18N_DOCSAVE_FILTER")); !filename.isEmpty())
+            {
+                if (stringToFile(filename) != Types::File::WPD)
+                    filename += ".wpd";
                 win->saveFile(filename);
+            }
         }
     });
     connect(me_export_txt, &QAction::triggered, [&]()
     {
         if (auto *win = currentTextWindow(); win)
         {
-            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_TXT"),
-              "./", tr("I18N_EXPORT_TXT_FILTER")); !filename.isEmpty())
+            if (auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_TXT"), "./",
+                tr("I18N_EXPORT_TXT_FILTER")); !filename.isEmpty())
+            {
+                if (stringToFile(filename) != Types::File::TXT)
+                    filename += ".txt";
                 win->saveFile(filename);
+            }
         }
     });
     connect(me_export_html, &QAction::triggered, [&]()
     {
         if (auto *win = currentTextWindow(); win)
         {
-            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_HTML"),
-              "./", tr("I18N_EXPORT_HTML_FILTER")); !filename.isEmpty())
+            if (auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_HTML"), "./",
+                tr("I18N_EXPORT_HTML_FILTER")); !filename.isEmpty())
+            {
+                if (stringToFile(filename) != Types::File::TXT)
+                    filename += ".html";
                 win->saveFile(filename);
+            }
         }
     });
     connect(me_export_odf, &QAction::triggered, [&]()
     {
         if (auto *win = currentTextWindow(); win)
         {
-            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_ODF"),
-              "./", tr("I18N_EXPORT_ODF_FILTER")); !filename.isEmpty())
+            if (auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_ODF"), "./",
+                tr("I18N_EXPORT_ODF_FILTER")); !filename.isEmpty())
+            {
+                if (stringToFile(filename) != Types::File::ODF)
+                    filename += ".odf";
                 win->saveFile(filename);
+            }
         }
     });
     connect(me_export_pdf, &QAction::triggered, [&]()
     {
         if (auto *win = currentTextWindow(); win)
         {
-            if (const auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_PDF"),
-              "./", tr("I18N_EXPORT_PDF_FILTER")); !filename.isEmpty())
+            if (auto filename = QFileDialog::getSaveFileName(this, tr("I18N_EXPORT_PDF"), "./",
+                tr("I18N_EXPORT_PDF_FILTER")); !filename.isEmpty())
+            {
+                if (stringToFile(filename) != Types::File::PDF)
+                    filename += ".pdf";
                 win->saveFile(filename);
+            }
         }
     });
     connect(me_app_close, &QAction::triggered, [&](){ wid_mdi->closeActiveSubWindow(); });
