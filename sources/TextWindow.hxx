@@ -30,8 +30,8 @@ public:
     bool filenameValid() const;
     QString filename() const;
     QTextCursor textCursor() const;
-    bool loadFile(const QString &filename);
-    bool saveFile(const QString &filename) const;
+    bool loadFile(const QString &filename, const Types::File type = Types::File::Undef);
+    bool saveFile(const QString &filename, const Types::File type = Types::File::Undef) const;
 
 protected:
     //--- protected methods ---

@@ -134,9 +134,9 @@ QTextCursor TextWindow::textCursor() const
     return wid_text->textCursor();
 }
 
-bool TextWindow::loadFile(const QString &filename)
+bool TextWindow::loadFile(const QString &filename, const Types::File type)
 {
-    switch (stringToFile(filename))
+    switch (type)
     {
         case Types::File::WPD:
             return loadWPD(filename);
@@ -154,9 +154,9 @@ bool TextWindow::loadFile(const QString &filename)
     }
 }
 
-bool TextWindow::saveFile(const QString &filename) const
+bool TextWindow::saveFile(const QString &filename, const Types::File type) const
 {
-    switch (stringToFile(filename))
+    switch (type)
     {
         case Types::File::WPD:
             return saveWPD(filename);
