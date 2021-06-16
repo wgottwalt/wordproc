@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QDebug>
 #include <QFileDialog>
 #include <QMdiSubWindow>
 #include <QMessageBox>
@@ -529,13 +530,12 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
     });
     connect(this, &MainWindow::switchIcons, textwin, &TextWindow::setIcons);
 
-#if 0
-    if (!filename.isEmpty() && !textwin->openFile(filename))
+    if (filename.isEmpty() || !textwin->loadFile(filename))
     {
         wid_mdi->removeSubWindow(subwin);
         return nullptr;
     }
-#endif
+
     if (len == 0)
         mm_window->insertSeparator(action);
 
