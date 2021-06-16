@@ -144,11 +144,6 @@ bool TextWindow::loadFile(const QString &filename, const Types::File type)
             return loadTXT(filename);
         case Types::File::HTML:
             return loadHTML(filename);
-        case Types::File::ODF:
-            return loadODF(filename);
-        case Types::File::PDF:
-            return loadPDF(filename);
-        case Types::File::Undef:
         default:
             return false;;
     }
@@ -294,16 +289,6 @@ bool TextWindow::loadTXT(const QString &filename)
 }
 
 bool TextWindow::loadHTML(const QString &filename)
-{
-    return false;
-}
-
-bool TextWindow::loadODF(const QString &filename)
-{
-    return false;
-}
-
-bool TextWindow::loadPDF(const QString &filename)
 {
     return false;
 }

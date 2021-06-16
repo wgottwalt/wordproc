@@ -42,8 +42,6 @@ protected:
     bool loadWPD(const QString &filename);
     bool loadTXT(const QString &filename);
     bool loadHTML(const QString &filename);
-    bool loadODF(const QString &filename);
-    bool loadPDF(const QString &filename);
     bool saveWPD(const QString &filename) const;
     bool saveTXT(const QString &filename) const;
     bool saveHTML(const QString &filename) const;
