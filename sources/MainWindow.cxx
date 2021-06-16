@@ -1,5 +1,4 @@
 #include <QApplication>
-#include <QDebug>
 #include <QFileDialog>
 #include <QMdiSubWindow>
 #include <QMessageBox>
@@ -520,29 +519,40 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
     QAction *action = mm_window->addAction(textwin->windowTitle(), subwin, [this,subwin]()
                                            { wid_mdi->setActiveSubWindow(subwin); });
     qint32 len = wid_mdi->subWindowList().size() - 1;
+    auto type = stringToFile(filename);
 
-    connect(textwin, &TextWindow::windowTitleChanged, action, &QAction::setText);
-    connect(textwin, &TextWindow::destroyed, [this,action]()
+    switch (type)
     {
-        mm_window->removeAction(action);
-        if (const auto list = mm_window->actions(); !list.isEmpty() && list.last()->isSeparator())
-            mm_window->removeAction(list.last());
-    });
-    connect(this, &MainWindow::switchIcons, textwin, &TextWindow::setIcons);
+        case Types::File::WPD:
+        case Types::File::TXT:
+        case Types::File::HTML:
+            connect(textwin, &TextWindow::windowTitleChanged, action, &QAction::setText);
+            connect(textwin, &TextWindow::destroyed, [this,action]()
+            {
+                mm_window->removeAction(action);
+                if (const auto list = mm_window->actions(); !list.isEmpty() && list.last()->isSeparator())
+                    mm_window->removeAction(list.last());
+            });
+            connect(this, &MainWindow::switchIcons, textwin, &TextWindow::setIcons);
 
-    if (filename.isEmpty() || !textwin->loadFile(filename))
-    {
-        wid_mdi->removeSubWindow(subwin);
-        return nullptr;
+            if (filename.isEmpty() || !textwin->loadFile(filename, type))
+            {
+                wid_mdi->removeSubWindow(subwin);
+                return nullptr;
+            }
+
+            if (len == 0)
+                mm_window->insertSeparator(action);
+
+            subwin->setGeometry(len * 10 , len * 10, width() * 2 / 3, height() * 2 / 3);
+            textwin->show();
+
+            return textwin;
+
+        default:
+            wid_mdi->removeSubWindow(subwin);
+            return nullptr;
     }
-
-    if (len == 0)
-        mm_window->insertSeparator(action);
-
-    subwin->setGeometry(len * 10 , len * 10, width() * 2 / 3, height() * 2 / 3);
-    textwin->show();
-
-    return textwin;
 }
 
 TextWindow *MainWindow::currentTextWindow()
