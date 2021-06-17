@@ -285,6 +285,16 @@ bool TextWindow::loadWPD(const QString &filename)
 
 bool TextWindow::loadTXT(const QString &filename)
 {
+    if (QFile ifile(filename); ifile.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream in(&ifile);
+
+        wid_text->setPlainText(in.readAll());
+        ifile.close();
+
+        return true;
+    }
+
     return false;
 }
 
