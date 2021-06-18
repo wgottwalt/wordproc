@@ -292,6 +292,10 @@ bool TextWindow::loadTXT(const QString &filename)
         wid_text->setPlainText(in.readAll());
         ifile.close();
 
+        _filename = filename;
+        _text_changed = false;
+        updateWindowTitle();
+
         return true;
     }
 
@@ -300,6 +304,20 @@ bool TextWindow::loadTXT(const QString &filename)
 
 bool TextWindow::loadHTML(const QString &filename)
 {
+    if (QFile ifile(filename); ifile.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QTextStream in(&ifile);
+
+        wid_text->setHtml(in.readAll());
+        ifile.close();
+
+        _filename = filename;
+        _text_changed = false;
+        updateWindowTitle();
+
+        return true;
+    }
+
     return false;
 }
 
