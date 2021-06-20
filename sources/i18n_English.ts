@@ -327,7 +327,7 @@
     </message>
     <message>
         <source>I18N_UNKNOWN_FILE</source>
-        <translation>unknown.txt</translation>
+        <translation>unnamed.wpd</translation>
     </message>
 </context>
 </TS>
