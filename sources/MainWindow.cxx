@@ -107,7 +107,7 @@ void MainWindow::setupActions()
         me_app_close->setEnabled(subwindow ? true : false);
         me_app_print->setEnabled(subwindow ? true : false);
     });
-    connect(me_app_new, &QAction::triggered, [&](){ createTextWindow(); });
+    connect(me_app_new, &QAction::triggered, [&](){ createTextWindow("", true); });
     connect(me_app_open, &QAction::triggered, [&]()
     {
         if (const auto filenames = QFileDialog::getOpenFileNames(this, tr("I18N_DOCOPEN"), "./",
@@ -512,7 +512,7 @@ void MainWindow::setIcons(const QString &prefix)
     me_window_closeall->setIcon(QIcon(prefix + "Window/Close"));
 }
 
-TextWindow *MainWindow::createTextWindow(const QString &filename)
+TextWindow *MainWindow::createTextWindow(const QString &filename, const bool empty)
 {
     QMdiSubWindow *subwin = wid_mdi->addSubWindow(new TextWindow);
     TextWindow *textwin = qobject_cast<TextWindow *>(subwin->widget());
@@ -520,6 +520,9 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
                                            { wid_mdi->setActiveSubWindow(subwin); });
     qint32 len = wid_mdi->subWindowList().size() - 1;
     auto type = stringToFile(filename);
+
+    if (empty && (type == Types::File::Undef))
+        type = Types::File::WPD;
 
     switch (type)
     {
@@ -530,12 +533,13 @@ TextWindow *MainWindow::createTextWindow(const QString &filename)
             connect(textwin, &TextWindow::destroyed, [this,action]()
             {
                 mm_window->removeAction(action);
-                if (const auto list = mm_window->actions(); !list.isEmpty() && list.last()->isSeparator())
+                if (const auto list = mm_window->actions();
+                  !list.isEmpty() && list.last()->isSeparator())
                     mm_window->removeAction(list.last());
             });
             connect(this, &MainWindow::switchIcons, textwin, &TextWindow::setIcons);
 
-            if (filename.isEmpty() || !textwin->loadFile(filename, type))
+            if (!filename.isEmpty() && !textwin->loadFile(filename, type))
             {
                 wid_mdi->removeSubWindow(subwin);
                 return nullptr;

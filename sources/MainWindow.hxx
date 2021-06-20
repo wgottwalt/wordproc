@@ -35,7 +35,7 @@ protected:
     void setDarkmode(const bool mode = true);
     void setIcons(const QString &prefix);
 
-    TextWindow *createTextWindow(const QString &filename = "");
+    TextWindow *createTextWindow(const QString &filename = "", const bool empty = false);
     TextWindow *currentTextWindow();
 
 private:
